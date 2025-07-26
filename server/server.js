@@ -19,9 +19,13 @@ const app = express();
 // Middleware
 // Enable CORS for specified origins
 app.use(cors({
-  // IMPORTANT: Updated for deployed frontend URL
+  // IMPORTANT: Updated for deployed frontend URL and custom domain
   origin: process.env.NODE_ENV === 'production'
-    ? ['https://dietbro-all.vercel.app'] // Your deployed Vercel frontend URL
+    ? [
+        'https://dietbro-all.vercel.app', // Your Vercel default domain
+        'https://www.dietbro.in',         // Your custom domain (with www)
+        'https://dietbro.in'              // Your custom domain (without www)
+      ]
     : ['http://localhost:3000', 'http://localhost:5173', 'https://localhost:5173'], // Your local frontend URLs
   credentials: true
 }));
