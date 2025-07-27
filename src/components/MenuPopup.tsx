@@ -120,7 +120,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, onFAQClick,
                 onClick={onLocationsClick}
                 className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
               >
-                Location's
+                Locations
               </button>
               <button 
                 onClick={onFAQClick}
