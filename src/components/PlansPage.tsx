@@ -79,7 +79,8 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onFAQClick,
   // Adjusted options to match calculation logic and user request
   const mealPreferences = ['Lunch', 'Dinner', 'Both']; // Added 'Both' as an option
   const mealTypes = ['Veg', 'Non-Veg']; // Removed 'Egg' option
-  const dietTypes = ['High Protein', 'Balanced'];
+  // FIX: Changed 'High Protein' to 'HighProtein' to match pricingTable key
+  const dietTypes = ['HighProtein', 'Balanced']; 
   const numberOfDaysOptions = [3, 7, 14, 28]; // Use numbers directly for calculation
 
   // The 'plans' array now represents general plan types, not specific prices
@@ -230,14 +231,15 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onFAQClick,
                       {dietTypes.map((diet) => (
                         <button
                           key={diet}
-                          onClick={() => handlePreferenceChange('dietType', diet)}
+                          onClick={() => handlePreferenceChange('dietType', diet as 'HighProtein' | 'Balanced')} // Cast to correct type for consistency
                           className={`px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                             selectedPreferences.dietType === diet
                               ? 'bg-brand-green-500 text-white shadow-lg'
                               : 'bg-gray-100 text-gray-600 hover:bg-brand-green-50'
                           }`}
                         >
-                          {diet}
+                          {/* Display "High Protein" with space for UI, but use "HighProtein" for internal logic */}
+                          {diet === 'HighProtein' ? 'High Protein' : diet}
                         </button>
                       ))}
                     </div>
@@ -292,7 +294,7 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onFAQClick,
                   
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2 gagalin-heading">
-                      {plan.name}
+                      {plan.name === 'HighProtein' ? 'High Protein' : plan.name} {/* Display "High Protein" with space */}
                     </h3>
                     {/* Removed hardcoded price display here as it's now dynamic */}
                   </div>
