@@ -25,22 +25,23 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
       number: "3",
       title: "Heat, eat and repeat",
       description: "Ready to eat in 90 seconds. Enjoy your meal",
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
+      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=fit", // Changed w=300&h=200&fit=crop to w=300&h=200&fit=fit for better display
       icon: <Users className="w-8 h-8 text-brand-green-500" />
     }
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-animated relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-brand-green-500 rounded-full rotate-slow"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-brand-green-600 rounded-full rotate-slow" style={{ animationDirection: 'reverse' }}></div>
+        <div className="absolute top-20 left-10 w-64 h-64 bg-brand-green-200 rounded-full rotate-slow"></div>
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-brand-green-200 rounded-full rotate-slow" style={{ animationDirection: 'reverse' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight gagalin-heading text-reveal">
+          {/* Changed gradient-text to a direct Tailwind text gradient for consistency */}
+          <h2 className="text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-green-500 to-brand-green-700 mb-6 tracking-tight gagalin-heading text-reveal">
             How Dietbro works:
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
@@ -66,7 +67,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
                 {step.icon}
               </div>
               
-              <h3 className="text-xl font-semibold gradient-text mb-3 gagalin-heading">
+              <h3 className="text-xl font-bold gradient-text mb-3 metropolis-subheading text-shadow">
                 {step.title}
               </h3>
               
