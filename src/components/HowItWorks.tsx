@@ -25,7 +25,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
       number: "3",
       title: "Heat, eat and repeat",
       description: "Ready to eat in 90 seconds. Enjoy your meal",
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=fit",
+      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop",
       icon: <Users className="w-8 h-8 text-brand-green-500" />
     }
   ];
@@ -40,9 +40,9 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          {/* Corrected: Applied bg-gradient-brand to match numbers and button */}
-          <h2 className="text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-brand mb-6 tracking-tight gagalin-heading text-reveal">
-            How Dietbro works:
+          {/* Apply font-gagalin for the main heading */}
+          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight font-gagalin text-reveal">
+            How Dietbro Works:
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
             Save time and enjoy nutritious ready-to-eat meals in 3 easy steps.
@@ -58,7 +58,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
                   alt={step.title}
                   className="w-full h-48 object-cover rounded-2xl shadow-lg group-hover:shadow-glow transition-all duration-500 hover:scale-105"
                 />
-                <div className="absolute -top-4 -left-4 bg-gradient-brand text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold shadow-glow pulse-slow">
+                {/* Apply font-oswald for the numbers */}
+                <div className="absolute -top-4 -left-4 bg-gradient-brand text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-oswald shadow-glow pulse-slow">
                   {step.number}
                 </div>
               </div>
@@ -67,7 +68,8 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
                 {step.icon}
               </div>
               
-              <h3 className="text-xl font-bold gradient-text mb-3 metropolis-subheading text-shadow">
+              {/* Apply font-oswald for the step titles */}
+              <h3 className="text-xl font-bold gradient-text mb-3 font-oswald text-shadow">
                 {step.title}
               </h3>
               

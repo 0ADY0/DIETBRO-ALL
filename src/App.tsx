@@ -13,126 +13,129 @@ import MenuPopup from './components/MenuPopup';
 import LocationsPopup from './components/LocationsPopup';
 import PlansPage from './components/PlansPage';
 import BlogsPage from './components/BlogsPage';
+//import OrdersPage from './components/OrdersPage'; // Ensure this component exists
 
 function App() {
   const [showMealPlanForm, setShowMealPlanForm] = useState(false);
-  const [showFAQ, setShowFAQ] = useState(false);
+  const [showOrders, setShowOrders] = useState(false);
   const [showMenuPopup, setShowMenuPopup] = useState(false);
   const [showLocationsPopup, setShowLocationsPopup] = useState(false);
   const [showPlansPage, setShowPlansPage] = useState(false);
   const [showBlogsPage, setShowBlogsPage] = useState(false);
+  const [showFAQ, setShowFAQ] = useState(false);
 
-  const handleGetStarted = () => {
-    setShowMealPlanForm(true);
-    setShowFAQ(false);
+  // Helper to reset all show states to false
+  const resetAllShowStates = () => {
+    setShowMealPlanForm(false);
+    setShowOrders(false);
     setShowMenuPopup(false);
     setShowLocationsPopup(false);
     setShowPlansPage(false);
     setShowBlogsPage(false);
+    setShowFAQ(false);
+  };
+
+  const handleGetStarted = () => {
+    resetAllShowStates();
+    setShowMealPlanForm(true);
   };
 
   const handleBackToHome = () => {
-    setShowMealPlanForm(false);
-    setShowFAQ(false);
-    setShowMenuPopup(false);
-    setShowLocationsPopup(false);
-    setShowPlansPage(false);
-    setShowBlogsPage(false);
+    resetAllShowStates();
   };
 
-  const handleFAQClick = () => {
-    setShowFAQ(prev => !prev ? true : false);
-    setShowMealPlanForm(false);
-    setShowMenuPopup(false);
-    setShowLocationsPopup(false);
-    setShowPlansPage(false);
-    setShowBlogsPage(false);
+  const handleOrdersClick = () => {
+    resetAllShowStates();
+    setShowOrders(true);
   };
 
   const handleMenuClick = () => {
-    setShowMenuPopup(prev => !prev ? true : false);
-    setShowMealPlanForm(false);
-    setShowFAQ(false);
-    setShowLocationsPopup(false);
-    setShowPlansPage(false);
-    setShowBlogsPage(false);
+    if (!showMenuPopup) {
+      resetAllShowStates();
+      setShowMenuPopup(true);
+    }
   };
 
   const handleLocationsClick = () => {
-    setShowLocationsPopup(prev => !prev ? true : false);
-    setShowMealPlanForm(false);
-    setShowFAQ(false);
-    setShowMenuPopup(false);
-    setShowPlansPage(false);
-    setShowBlogsPage(false);
+    if (!showLocationsPopup) {
+      resetAllShowStates();
+      setShowLocationsPopup(true);
+    }
   };
 
   const handlePlansClick = () => {
-    setShowPlansPage(prev => !prev ? true : false);
-    setShowMealPlanForm(false);
-    setShowFAQ(false);
-    setShowMenuPopup(false);
-    setShowLocationsPopup(false);
-    setShowBlogsPage(false);
+    if (!showPlansPage) {
+      resetAllShowStates();
+      setShowPlansPage(true);
+    }
   };
 
   const handleBlogsClick = () => {
-    setShowBlogsPage(prev => !prev ? true : false);
-    setShowMealPlanForm(false);
-    setShowFAQ(false);
-    setShowMenuPopup(false);
-    setShowLocationsPopup(false);
-    setShowPlansPage(false);
+    if (!showBlogsPage) {
+      resetAllShowStates();
+      setShowBlogsPage(true);
+    }
   };
 
+  const handleFAQClick = () => {
+    if (!showFAQ) {
+      resetAllShowStates();
+      setShowFAQ(true);
+    }
+  };
+
+  // Props object to pass consistently to components that need navigation
+  const commonNavProps = {
+    onBack: handleBackToHome,
+    onGetStarted: handleGetStarted,
+    onOrdersClick: handleOrdersClick,
+    onMenuClick: handleMenuClick,
+    onLocationsClick: handleLocationsClick,
+    onPlansClick: handlePlansClick,
+    onBlogsClick: handleBlogsClick,
+    onFAQClick: handleFAQClick,
+    onLogoClick: handleBackToHome, // Assuming logo click goes back to home
+  };
+
+  if (showFAQ) {
+    return <FAQ {...commonNavProps} />;
+  }
+
   if (showBlogsPage) {
-    return <BlogsPage onBack={handleBackToHome} onGetStarted={handleGetStarted} onFAQClick={handleFAQClick} onMenuClick={handleMenuClick} onPlansClick={handlePlansClick} onLocationsClick={handleLocationsClick} />;
+    return <BlogsPage {...commonNavProps} />;
   }
 
   if (showLocationsPopup) {
-    return <LocationsPopup onBack={handleBackToHome} onGetStarted={handleGetStarted} onFAQClick={handleFAQClick} onMenuClick={handleMenuClick} onPlansClick={handlePlansClick} onBlogsClick={handleBlogsClick} />;
+    return <LocationsPopup {...commonNavProps} />;
   }
 
   if (showPlansPage) {
-    return <PlansPage onBack={handleBackToHome} onGetStarted={handleGetStarted} onFAQClick={handleFAQClick} onMenuClick={handleMenuClick} onLocationsClick={handleLocationsClick} onBlogsClick={handleBlogsClick} />;
+    return <PlansPage {...commonNavProps} />;
   }
 
   if (showMenuPopup) {
-    return <MenuPopup onBack={handleBackToHome} onGetStarted={handleGetStarted} onFAQClick={handleFAQClick} onPlansClick={handlePlansClick} onLocationsClick={handleLocationsClick} onBlogsClick={handleBlogsClick} />;
+    return <MenuPopup {...commonNavProps} />;
   }
 
-  if (showFAQ) {
-    return <FAQ onBack={handleBackToHome} onMenuClick={handleMenuClick} onGetStarted={handleGetStarted} onPlansClick={handlePlansClick} onLocationsClick={handleLocationsClick} onBlogsClick={handleBlogsClick} />;
-  }
+  //if (showOrders) {
+    //return <OrdersPage {...commonNavProps} />;
+ // }
 
   if (showMealPlanForm) {
-    return <MealPlanForm onBack={handleBackToHome} onFAQClick={handleFAQClick} onMenuClick={handleMenuClick} onPlansClick={handlePlansClick} onLocationsClick={handleLocationsClick} onBlogsClick={handleBlogsClick} />;
+    return <MealPlanForm {...commonNavProps} />;
   }
 
   return (
     <div className="min-h-screen">
-      <Header 
-      onGetStarted={handleGetStarted} 
-      onFAQClick={handleFAQClick} 
-      onMenuClick={handleMenuClick}
-      onLocationsClick={handleLocationsClick}
-      onPlansClick={handlePlansClick}
-      onBlogsClick={handleBlogsClick}
-      onLogoClick={handleBackToHome}
-      />
+      {/* Pass all common navigation props to Header and Footer */}
+      <Header {...commonNavProps} />
       <Hero onGetStarted={handleGetStarted} />
       <HowItWorks onGetStarted={handleGetStarted} />
       <Features onGetStarted={handleGetStarted} />
       <Menu onGetStarted={handleGetStarted} />
       <BlogSection onGetStarted={handleGetStarted} onBlogsClick={handleBlogsClick} />
       <Testimonials onGetStarted={handleGetStarted} />
-      <Footer 
-      onGetStarted={handleGetStarted}
-      onFAQClick={handleFAQClick}
-      onMenuClick={handleMenuClick}
-      onPlansClick={handlePlansClick}
-      onBlogsClick={handleBlogsClick}
-      />
+      <Footer {...commonNavProps} />
     </div>
   );
 }

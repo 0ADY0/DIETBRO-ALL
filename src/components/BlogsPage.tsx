@@ -204,7 +204,7 @@ const BlogsPage: React.FC<BlogsPageProps> = ({ onBack, onGetStarted, onFAQClick,
               </button>
               <button 
                 onClick={onBack}
-                className="logo-text text-brand-green-500 hover:scale-105 transition-transform"
+                className="logo-text italic text-brand-green-500 hover:scale-105 transition-transform"
               >
                 DIETBRO
               </button>

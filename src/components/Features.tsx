@@ -28,8 +28,8 @@ const Features: React.FC<FeaturesProps> = ({ onGetStarted }) => {
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-brand-green-500 rounded-full float"></div>
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 border-2 border-brand-green-600 rounded-full float" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-brand-green-200 rounded-full float"></div>
+        <div className="absolute top-3/4 right-1/4 w-24 h-24 border-2 border-brand-green-200 rounded-full float" style={{ animationDelay: '1.5s' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,8 @@ const Features: React.FC<FeaturesProps> = ({ onGetStarted }) => {
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold gradient-text mb-3">
+                  {/* Changed metropolis-subheading to font-oswald for consistency */}
+                  <h3 className="text-xl font-bold gradient-text mb-3 font-oswald text-shadow">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed font-light">

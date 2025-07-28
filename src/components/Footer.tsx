@@ -3,19 +3,29 @@ import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 interface FooterProps {
   onGetStarted?: () => void;
-  onFAQClick?: () => void;
+  onOrdersClick?: () => void;
   onMenuClick?: () => void;
   onPlansClick?: () => void;
+  onBlogsClick?: () => void;
+  onFAQClick?: () => void;
+  onLogoClick?: () => void; // Added for logo click consistency if needed
 }
 
-const Footer: React.FC<FooterProps> = ({ onGetStarted, onFAQClick, onMenuClick, onPlansClick }) => {
+// onOrdersClick and onBlogsClick are commented out for now
+const Footer: React.FC<FooterProps> = ({ onGetStarted, /*onOrdersClick,*/ onMenuClick, onPlansClick, /*onBlogsClick,*/ onFAQClick, onLogoClick }) => {
   return (
     <footer className="bg-gray-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="logo-text text-brand-green-400">DIETBRO</h3>
+            {/* Using font-oswald for logo consistency */}
+            <h3 
+              className="text-2xl font-black italic text-brand-green-400 font-oswald cursor-pointer"
+              onClick={onLogoClick || onGetStarted} // Assuming logo click might go to home or get started
+            >
+              DIETBRO
+            </h3>
             <p className="text-gray-300 leading-relaxed font-light">
               Delivering fresh, nutritious, and delicious meals to fuel your fitness journey across Bangalore.
             </p>
@@ -46,8 +56,29 @@ const Footer: React.FC<FooterProps> = ({ onGetStarted, onFAQClick, onMenuClick, 
                   Plans
                 </button>
               </li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">How it Works</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">About Us</a></li>
+              {/* Assuming these are internal navigation, changed to buttons with handlers */}
+              <li>
+                <button
+                  onClick={onGetStarted} // Assuming "How it Works" might lead to Get Started form
+                  className="text-gray-300 hover:text-brand-green-400 transition-colors font-light text-left"
+                >
+                  How it Works
+                </button>
+              </li>
+              <li>
+                {/* Placeholder for About Us, if it's a separate page */}
+                <a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">About Us</a>
+              </li>
+              {/*
+              <li>
+                <button 
+                  onClick={onBlogsClick}
+                  className="text-gray-300 hover:text-brand-green-400 transition-colors font-light text-left"
+                >
+                  Blogs
+                </button>
+              </li>
+              */}
             </ul>
           </div>
 
@@ -66,6 +97,8 @@ const Footer: React.FC<FooterProps> = ({ onGetStarted, onFAQClick, onMenuClick, 
               <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">Contact</a></li>
               <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">Terms of Service</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">Help Center</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-brand-green-400 transition-colors font-light">Refund Policy</a></li>
             </ul>
           </div>
 

@@ -33,7 +33,8 @@ const calculateTotalPrice = ({ dietType, days, mealsPerDay }: { dietType: 'Balan
   return pricePerMeal * mealsPerDay * days;
 };
 
-const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onOrdersClick, onMenuClick, onLocationsClick, onBlogsClick, onFAQClick }) => {
+// onOrdersClick and onBlogsClick are commented out for now
+const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, /*onOrdersClick,*/ onMenuClick, onLocationsClick, /*onBlogsClick,*/ onFAQClick }) => {
   const [currentMealSlide, setCurrentMealSlide] = useState(0);
 
   // State for selected preferences, ensuring types match pricingTable keys and numeric values
@@ -170,12 +171,13 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onOrdersCli
                 <ArrowLeft className="w-5 h-5 text-brand-green-600" />
               </button>
               {/* Changed to h1 for semantic correctness and onClick for navigation */}
-              <h1
+              <button
                 onClick={onBack}
-                className="text-2xl font-black text-brand-green-500 hover:scale-105 transition-transform logo-text cursor-pointer"
+                className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald"
+                style={{ outline: 'none', border: 'none', background: 'none', padding: 0, margin: 0 }}
               >
                 DIETBRO
-              </h1>
+              </button>
             </div>
             <nav className="hidden md:flex space-x-6">
               <button
@@ -184,24 +186,17 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onOrdersCli
               >
                 Menu
               </button>
-              <a href="#" className="text-brand-green-500 font-semibold text-sm">Plans</a>
+              <button
+                onClick={() => {}}
+                className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
+              >
+                Plans
+              </button>
               <button
                 onClick={onLocationsClick}
                 className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
               >
-                Location's
-              </button>
-              <button
-                onClick={onOrdersClick} // New button
-                className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
-              >
-                Orders
-              </button>
-              <button
-                onClick={onBlogsClick} // New button
-                className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
-              >
-                Blogs
+                Locations
               </button>
               <button
                 onClick={onFAQClick}
@@ -209,7 +204,6 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, onOrdersCli
               >
                 FAQ
               </button>
-              <a href="#" className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm">Contact</a>
             </nav>
             <button
               onClick={onGetStarted}

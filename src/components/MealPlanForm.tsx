@@ -10,7 +10,8 @@
       onBlogsClick?: () => void; // Added onBlogsClick prop if it's used in header/footer
     }
 
-    const MealPlanForm: React.FC<MealPlanFormProps> = ({ onBack, onFAQClick, onMenuClick, onPlansClick, onLocationsClick, onBlogsClick }) => {
+    // onBlogsClick is commented out for now
+    const MealPlanForm: React.FC<MealPlanFormProps> = ({ onBack, onFAQClick, onMenuClick, onPlansClick, onLocationsClick /*, onBlogsClick */ }) => {
       const [currentTestimonial, setCurrentTestimonial] = useState(0);
       const [formData, setFormData] = useState({
         name: '',
@@ -137,7 +138,13 @@
                   >
                     <ArrowLeft className="w-5 h-5 text-brand-green-600" />
                   </button>
-                  <h1 className="logo-text text-brand-green-500">DIETBRO</h1>
+                  <button
+                    onClick={onBack}
+                    className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald"
+                    style={{ outline: 'none', border: 'none', background: 'none', padding: 0, margin: 0 }}
+                  >
+                    DIETBRO
+                  </button>
                 </div>
                 <nav className="hidden md:flex space-x-6">
                   <button
@@ -164,7 +171,6 @@
                   >
                     FAQ
                   </button>
-                  <a href="#" className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm">Contact</a>
                 </nav>
                 <button className="bg-brand-green-500 text-white px-4 py-2 rounded-xl hover:bg-brand-green-600 transition-colors font-semibold text-sm shadow-lg hover:shadow-xl">
                   Get Started
@@ -315,20 +321,6 @@
                         onChange={(e) => handleInputChange('address', e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green-400 focus:ring-2 focus:ring-brand-green-100 transition-all bg-white/70 backdrop-blur-sm"
                         placeholder="Enter your delivery address"
-                      />
-                    </div>
-
-                    {/* Password - NEW FIELD */}
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Password*
-                      </label>
-                      <input
-                        type="password"
-                        value={formData.password}
-                        onChange={(e) => handleInputChange('password', e.target.value)}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-green-400 focus:ring-2 focus:ring-brand-green-100 transition-all bg-white/70 backdrop-blur-sm"
-                        placeholder="Enter your password"
                       />
                     </div>
 

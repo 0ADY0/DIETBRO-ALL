@@ -3,15 +3,17 @@ import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   onGetStarted?: () => void;
-  onFAQClick?: () => void;
+  onOrdersClick?: () => void;
   onMenuClick?: () => void;
   onLocationsClick?: () => void;
   onPlansClick?: () => void;
   onBlogsClick?: () => void;
-  onLogoClick?: () => void;
+  onLogoClick?: () => void; // Added for logo click consistency if needed
+  onFAQClick?: () => void; // Added as it's a common header link
 }
 
-const Header: React.FC<HeaderProps> = ({ onGetStarted, onFAQClick, onMenuClick, onLocationsClick, onPlansClick, onBlogsClick, onLogoClick }) => {
+// onOrdersClick and onBlogsClick are commented out for now
+const Header: React.FC<HeaderProps> = ({ onGetStarted, /*onOrdersClick,*/ onMenuClick, onLocationsClick, onPlansClick, /*onBlogsClick,*/ onLogoClick, onFAQClick }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -20,9 +22,10 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted, onFAQClick, onMenuClick, 
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button 
+            {/* Using font-oswald for logo consistency */}
+            <button
               onClick={onLogoClick}
-              className="logo-text text-brand-green-500 interactive hover:scale-105 transition-transform"
+              className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald" // Added italic
             >
               DIETBRO
             </button>
@@ -30,41 +33,35 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted, onFAQClick, onMenuClick, 
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <button 
+            <button
               onClick={onMenuClick}
-              className="text-gray-700 hover:text-brand-green-500 transition-all font-medium hover:scale-105 interactive focus-ring"
+              className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
             >
               Menu
             </button>
-            <button 
+            <button
               onClick={onPlansClick}
-              className="text-gray-700 hover:text-brand-green-500 transition-all font-medium hover:scale-105 interactive focus-ring"
+              className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
             >
               Plans
             </button>
-            <button 
+            <button
               onClick={onLocationsClick}
-              className="text-gray-700 hover:text-brand-green-500 transition-all font-medium hover:scale-105 interactive focus-ring"
+              className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
             >
-              Location's
+              Locations
             </button>
-            <button 
+            <button
               onClick={onFAQClick}
-              className="text-gray-700 hover:text-brand-green-500 transition-all font-medium hover:scale-105 interactive focus-ring"
+              className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
             >
               FAQ
-            </button>
-            <button 
-              onClick={onBlogsClick}
-              className="text-gray-700 hover:text-brand-green-500 transition-all font-medium hover:scale-105 interactive focus-ring"
-            >
-              Blogs
             </button>
           </nav>
 
           {/* Get Started Button */}
           <div className="hidden md:block">
-            <button 
+            <button
               onClick={onGetStarted}
               className="btn-primary bg-gradient-brand text-white px-6 py-2.5 rounded-xl hover:bg-brand-green-600 transition-all font-semibold text-sm shadow-glow hover:shadow-glow-lg transform hover:-translate-y-1 hover:scale-105 interactive"
             >
@@ -87,37 +84,46 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted, onFAQClick, onMenuClick, 
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-brand-green-100/50 bg-white/95 backdrop-blur-md">
             <div className="flex flex-col space-y-4">
-              <button 
+              <button
                 onClick={onMenuClick}
                 className="text-gray-700 hover:text-brand-green-500 transition-all font-medium text-left hover:scale-105 interactive focus-ring"
               >
                 Menu
               </button>
-              <button 
+              <button
                 onClick={onPlansClick}
                 className="text-gray-700 hover:text-brand-green-500 transition-all font-medium text-left hover:scale-105 interactive focus-ring"
               >
                 Plans
               </button>
-              <button 
+              <button
                 onClick={onLocationsClick}
                 className="text-gray-700 hover:text-brand-green-500 transition-all font-medium text-left hover:scale-105 interactive focus-ring"
               >
                 Location's
               </button>
-              <button 
-                onClick={onFAQClick}
+              {/*
+              <button
+                onClick={onOrdersClick}
                 className="text-gray-700 hover:text-brand-green-500 transition-all font-medium text-left hover:scale-105 interactive focus-ring"
               >
-                FAQ
+                Orders
               </button>
-              <button 
+              <button
                 onClick={onBlogsClick}
                 className="text-gray-700 hover:text-brand-green-500 transition-all font-medium text-left hover:scale-105 interactive focus-ring"
               >
                 Blogs
               </button>
-              <button 
+              */}
+              {/* Added FAQ button to mobile nav */}
+              <button
+                onClick={onFAQClick}
+                className="text-gray-700 hover:text-brand-green-500 transition-all font-medium text-left hover:scale-105 interactive focus-ring"
+              >
+                FAQ
+              </button>
+              <button
                 onClick={onGetStarted}
                 className="btn-primary bg-gradient-brand text-white px-6 py-2.5 rounded-xl hover:bg-brand-green-600 transition-all font-semibold w-fit text-sm shadow-glow hover:shadow-glow-lg transform hover:-translate-y-1 hover:scale-105 interactive"
               >

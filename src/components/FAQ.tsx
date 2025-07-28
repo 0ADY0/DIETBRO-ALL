@@ -7,15 +7,18 @@ interface FAQProps {
   onGetStarted?: () => void;
   onPlansClick?: () => void;
   onLocationsClick?: () => void;
+  onBlogsClick?: () => void;
+  // Ensure all props used in header are defined here
 }
 
-const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansClick, onLocationsClick }) => {
+// onBlogsClick is commented out for now
+const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansClick, onLocationsClick /*, onBlogsClick */ }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
   const toggleExpanded = (id: string) => {
-    setExpandedItems(prev => 
-      prev.includes(id) 
+    setExpandedItems(prev =>
+      prev.includes(id)
         ? prev.filter(item => item !== id)
         : [...prev, id]
     );
@@ -141,7 +144,7 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
 
   const filteredCategories = categories.map(category => ({
     ...category,
-    questions: category.questions.filter(q => 
+    questions: category.questions.filter(q =>
       q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       q.answer.toLowerCase().includes(searchQuery.toLowerCase())
     )
@@ -154,37 +157,48 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
-              <button 
+              <button
                 onClick={onBack}
                 className="p-2 hover:bg-brand-green-50 rounded-xl transition-colors"
               >
                 <ArrowLeft className="w-5 h-5 text-brand-green-600" />
               </button>
-              <h1 className="logo-text text-brand-green-500">DIETBRO</h1>
+              {/* Using font-oswald for logo consistency */}
+              <button
+                onClick={onBack}
+                className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald"
+                style={{ outline: 'none', border: 'none', background: 'none', padding: 0, margin: 0 }}
+              >
+                DIETBRO
+              </button>
             </div>
             <nav className="hidden md:flex space-x-6">
-              <button 
+              <button
                 onClick={onMenuClick}
                 className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
               >
                 Menu
               </button>
-              <button 
+              <button
                 onClick={onPlansClick}
                 className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
               >
                 Plans
               </button>
-              <button 
+              <button
                 onClick={onLocationsClick}
                 className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
               >
                 Locations
               </button>
-              <a href="#" className="text-brand-green-500 font-semibold text-sm">FAQ</a>
-              <a href="#" className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm">Contact</a>
+              <button
+                onClick={onBack}
+                className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
+              >
+                FAQ
+              </button>
             </nav>
-            <button 
+            <button
               onClick={onGetStarted}
               className="bg-brand-green-500 text-white px-4 py-2 rounded-xl hover:bg-brand-green-600 transition-colors font-semibold text-sm shadow-lg hover:shadow-xl"
             >
@@ -198,7 +212,8 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
         <div className="max-w-4xl mx-auto">
           {/* Title */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-6 tracking-tight gagalin-heading">
+            {/* Using font-gagalin for heading consistency */}
+            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-6 tracking-tight font-gagalin">
               Frequently Asked Questions
             </h1>
           </div>
@@ -210,7 +225,7 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search..."
+                placeholder="Search FAQs..." 
                 className="w-full px-4 py-3 pl-12 rounded-2xl border border-gray-200 focus:border-brand-green-400 focus:ring-2 focus:ring-brand-green-100 transition-all bg-white/70 backdrop-blur-sm"
               />
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -237,7 +252,8 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
           <div className="space-y-8">
             {filteredCategories.map((category) => (
               <div key={category.id} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50">
-                <h2 className="text-2xl font-bold text-brand-green-600 mb-6 gagalin-heading">
+                {/* Using font-gagalin for category title consistency */}
+                <h2 className="text-2xl font-bold text-brand-green-600 mb-6 font-gagalin">
                   {category.title}
                 </h2>
                 
@@ -247,9 +263,11 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
                       <button
                         onClick={() => toggleExpanded(item.id)}
                         className="w-full px-6 py-4 text-left bg-gray-50/50 hover:bg-gray-100/50 transition-colors flex justify-between items-center"
+                        aria-expanded={expandedItems.includes(item.id)} // Accessibility
+                        aria-controls={`faq-answer-${item.id}`} // Accessibility
                       >
                         <span className="font-medium text-gray-900">{item.question}</span>
-                        <ChevronDown 
+                        <ChevronDown
                           className={`w-5 h-5 text-gray-500 transition-transform ${
                             expandedItems.includes(item.id) ? 'rotate-180' : ''
                           }`}
@@ -257,7 +275,7 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
                       </button>
                       
                       {expandedItems.includes(item.id) && (
-                        <div className="px-6 py-4 bg-white/50 border-t border-gray-200">
+                        <div id={`faq-answer-${item.id}`} role="region" className="px-6 py-4 bg-white/50 border-t border-gray-200">
                           <p className="text-gray-700 leading-relaxed">{item.answer}</p>
                         </div>
                       )}
@@ -271,7 +289,7 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
           {/* Contact Section */}
           <div className="text-center mt-16">
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 gagalin-heading">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 font-oswald text-shadow"> {/* Changed metropolis-subheading to font-oswald */}
                 Still have questions?
               </h3>
               <p className="text-gray-600 mb-6">

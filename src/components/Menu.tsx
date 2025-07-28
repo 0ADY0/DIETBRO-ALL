@@ -1,11 +1,20 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, ArrowLeft } from 'lucide-react';
 
 interface MenuProps {
   onGetStarted?: () => void;
+  // Add any other props needed for header/footer navigation if this component uses them
+  onMenuClick?: () => void;
+  onPlansClick?: () => void;
+  onLocationsClick?: () => void;
+  onOrdersClick?: () => void;
+  onBlogsClick?: () => void;
+  onFAQClick?: () => void;
+  onBack?: () => void;
+  onLogoClick?: () => void;
 }
 
-const Menu: React.FC<MenuProps> = ({ onGetStarted }) => {
+const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, onLocationsClick, onOrdersClick, onBlogsClick, onFAQClick, onBack, onLogoClick }) => {
   const menuItems = [
     {
       name: "Butter chicken bowl",
@@ -25,16 +34,17 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-soft relative overflow-hidden">
+    <section className="relative py-24 bg-gray-50 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-brand-green-500 rounded-full blur-3xl float"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-brand-green-600 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-10 right-10 w-40 h-40 bg-brand-green-200 rounded-full blur-3xl float"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 bg-brand-green-200 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight gagalin-heading text-reveal">
+          {/* Apply font-gagalin for the main heading */}
+          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight font-gagalin text-reveal">
             Explore Our Menu
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
@@ -58,7 +68,8 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted }) => {
               </div>
               
               <div className="p-6">
-                <h3 className="text-xl font-semibold gradient-text mb-2 gagalin-heading">
+                {/* Apply font-oswald for the menu item names */}
+                <h3 className="text-xl font-bold gradient-text mb-2 font-oswald text-shadow">
                   {item.name}
                 </h3>
                 <p className="text-gray-600 text-sm font-light">

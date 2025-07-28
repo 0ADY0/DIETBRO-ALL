@@ -11,7 +11,8 @@ interface LocationsPopupProps {
   onFAQClick?: () => void; // Keeping this prop as it's used in the header navigation
 }
 
-const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, onOrdersClick, onMenuClick, onPlansClick, onBlogsClick, onFAQClick }) => {
+// onOrdersClick and onBlogsClick are commented out for now
+const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, /*onOrdersClick,*/ onMenuClick, onPlansClick, /*onBlogsClick,*/ onFAQClick }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredLocations, setFilteredLocations] = useState<typeof locations>([]); // State for filtered locations
 
@@ -87,12 +88,13 @@ const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, o
                 <ArrowLeft className="w-5 h-5 text-brand-green-600" />
               </button>
               {/* Changed to h1 for semantic correctness and onClick for navigation */}
-              <h1
-                onClick={onBack} // Added onClick for logo to go back home
-                className="text-2xl font-black text-brand-green-500 hover:scale-105 transition-transform logo-text cursor-pointer"
+              <button
+                onClick={onBack}
+                className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald"
+                style={{ outline: 'none', border: 'none', background: 'none', padding: 0, margin: 0 }}
               >
                 DIETBRO
-              </h1>
+              </button>
             </div>
             <nav className="hidden md:flex space-x-6">
               <button
@@ -107,18 +109,11 @@ const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, o
               >
                 Plans
               </button>
-              <a href="#" className="text-brand-green-500 font-semibold text-sm">Location's</a>
               <button
-                onClick={onOrdersClick}
+                onClick={onPlansClick}
                 className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
               >
-                Orders
-              </button>
-              <button
-                onClick={onBlogsClick} // Added Blogs button
-                className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
-              >
-                Blogs
+                Locations
               </button>
               <button
                 onClick={onFAQClick}
@@ -126,7 +121,6 @@ const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, o
               >
                 FAQ
               </button>
-              <a href="#" className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm">Contact</a>
             </nav>
             <button
               onClick={onGetStarted}
