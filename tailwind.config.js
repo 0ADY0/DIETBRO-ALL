@@ -18,8 +18,13 @@ export default {
         }
       },
       fontFamily: {
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'metropolis': ['Metropolis', 'system-ui', 'sans-serif'],
+        // Define your custom fonts here
+        'inter': ['Inter', 'sans-serif'], // For general text
+        'oswald': ['Oswald', 'sans-serif'], // For logo/strong headings
+        'alfa-slab-one': ['"Alfa Slab One"', 'serif'], // For specific headings, note quotes for multi-word names
+        'gagalin': ['Gagalin', 'cursive'], // For specific display headings
+        // You can also override the default 'sans' if you want Inter to be the default for font-sans
+        // 'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.5' }],
