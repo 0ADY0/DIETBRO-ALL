@@ -20,9 +20,6 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"></noscript>
     
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gagalin&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gagalin&display=swap"></noscript>
-    
     <!-- Font loading optimization for universal compatibility -->
     <style>
       /* Font loading fallback to ensure text is visible immediately */
@@ -72,8 +69,7 @@
           document.fonts.load('600 16px Inter'),
           document.fonts.load('700 16px Inter'),
           document.fonts.load('900 16px Montserrat'),
-          document.fonts.load('400 16px "Alfa Slab One"'),
-          document.fonts.load('400 16px Gagalin')
+          document.fonts.load('400 16px "Alfa Slab One"')
         ]).then(() => {
           document.documentElement.classList.add('fonts-loaded');
         }).catch(() => {

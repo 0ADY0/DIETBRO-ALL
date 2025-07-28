@@ -252,7 +252,7 @@ const BlogsPage: React.FC<BlogsPageProps> = ({ onBack, onGetStarted, onFAQClick,
             <>
               {/* Title Section */}
               <div className="text-center mb-12">
-                <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight gagalin-heading">
+                <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight metropolis-heading">
                   Food Stories & Community
                 </h1>
                 <p className="text-lg text-gray-600 font-light">
@@ -325,7 +325,7 @@ const BlogsPage: React.FC<BlogsPageProps> = ({ onBack, onGetStarted, onFAQClick,
                         </span>
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3 gagalin-heading group-hover:text-brand-green-600 transition-colors">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3 metropolis-heading group-hover:text-brand-green-600 transition-colors">
                         {blog.title}
                       </h3>
                       
@@ -426,7 +426,7 @@ const BlogsPage: React.FC<BlogsPageProps> = ({ onBack, onGetStarted, onFAQClick,
                     </div>
                   </div>
                   
-                  <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 gagalin-heading">
+                  <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 metropolis-heading">
                     {selectedBlog.title}
                   </h1>
                   
@@ -468,7 +468,7 @@ const BlogsPage: React.FC<BlogsPageProps> = ({ onBack, onGetStarted, onFAQClick,
 
                 {/* Comments Section */}
                 <div className="border-t border-gray-200 pt-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 gagalin-heading">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 metropolis-heading">
                     Comments ({selectedBlog.comments?.length || 0})
                   </h3>
 

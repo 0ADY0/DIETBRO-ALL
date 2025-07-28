@@ -183,7 +183,7 @@
             <div className="max-w-6xl mx-auto">
               {/* Title Section */}
               <div className="text-center mb-12">
-                <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight gagalin-heading">
+                <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight metropolis-heading">
                   Let's Build Your Perfect<br />
                   Meal Plan 💪
                 </h1>
@@ -263,7 +263,7 @@
 
                 {/* Form Section */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50 transform hover:-translate-y-1">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center gagalin-heading">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center metropolis-heading">
                     Tell Us About Yourself
                   </h2>
 

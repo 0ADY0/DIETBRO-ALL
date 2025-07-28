@@ -136,7 +136,7 @@ const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, /
         <div className="max-w-4xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-6 tracking-tight gagalin-heading">
+            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-6 tracking-tight metropolis-heading">
               We Deliver Where You Are
             </h1>
             <p className="text-lg text-gray-600 font-light mb-2">
@@ -201,7 +201,7 @@ const LocationsPopup: React.FC<LocationsPopupProps> = ({ onBack, onGetStarted, /
 
           {/* Removed Statistics Section and MealCounter */}
           {/* <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-brand-green-600 mb-12 tracking-tight gagalin-heading">
+            <h2 className="text-3xl lg:text-4xl font-bold text-brand-green-600 mb-12 tracking-tight metropolis-heading">
               Live Meal Counter - Where Our Meals are Loved
             </h2>
             

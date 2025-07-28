@@ -44,7 +44,7 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           {/* Apply font-gagalin for the main heading */}
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight font-gagalin text-reveal">
+          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight font-metropolis text-reveal">
             Explore Our Menu
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>

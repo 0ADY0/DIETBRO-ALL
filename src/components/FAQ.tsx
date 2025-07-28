@@ -213,7 +213,7 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
           {/* Title */}
           <div className="text-center mb-12">
             {/* Using font-gagalin for heading consistency */}
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-6 tracking-tight font-gagalin">
+            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-6 tracking-tight font-metropolis">
               Frequently Asked Questions
             </h1>
           </div>
@@ -253,7 +253,7 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
             {filteredCategories.map((category) => (
               <div key={category.id} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50">
                 {/* Using font-gagalin for category title consistency */}
-                <h2 className="text-2xl font-bold text-brand-green-600 mb-6 font-gagalin">
+                <h2 className="text-2xl font-bold text-brand-green-600 mb-6 font-metropolis">
                   {category.title}
                 </h2>
                 

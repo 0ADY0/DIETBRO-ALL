@@ -78,7 +78,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight gagalin-heading text-reveal">
+          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight metropolis-heading text-reveal">
             Bangalore's #1 Meal Subscription choice
           </h2>
           <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
@@ -96,7 +96,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
             <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/10 rounded-full float" style={{ animationDelay: '1s' }}></div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8 text-center gagalin-heading text-shadow-lg">
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8 text-center metropolis-heading text-shadow-lg">
                 Our Customer Testimonial about us
               </h3>
 
@@ -183,7 +183,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
           </div>
 
           <div className="space-y-8 text-reveal" style={{ animationDelay: '0.8s' }}>
-            <h3 className="text-4xl lg:text-5xl font-bold gradient-text leading-tight gagalin-heading">
+            <h3 className="text-4xl lg:text-5xl font-bold gradient-text leading-tight metropolis-heading">
               Eat healthy, live better.<br />
               Dietbro has you<br />
               covered.

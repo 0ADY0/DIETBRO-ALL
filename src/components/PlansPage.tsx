@@ -219,7 +219,7 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, /*onOrdersC
         <div className="max-w-6xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight gagalin-heading">
+            <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight metropolis-heading">
               Tailored Meal Plans for Your Goals
             </h1>
             <p className="text-lg text-gray-600 font-light">
@@ -233,7 +233,7 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, /*onOrdersC
             <div className="space-y-8">
               {/* Top Seller Meals Slider */}
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50">
-                <h3 className="text-2xl font-bold text-brand-green-600 mb-6 text-center gagalin-heading">
+                <h3 className="text-2xl font-bold text-brand-green-600 mb-6 text-center metropolis-heading">
                   🔥 Top Seller Meals
                 </h3>
                 
@@ -393,8 +393,8 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, /*onOrdersC
             {/* Right Side - Consolidated Plan and Total Price */}
             <div className="space-y-6">
               <div className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50 text-brand-green-600">
-                <h3 className="text-xl font-bold mb-2 text-center gagalin-heading text-brand-green-600">Your Estimated Plan Price:</h3>
-                <span className="text-5xl font-extrabold gagalin-heading block text-center mb-4 text-brand-green-600">
+                <h3 className="text-xl font-bold mb-2 text-center metropolis-heading text-brand-green-600">Your Estimated Plan Price:</h3>
+                <span className="text-5xl font-extrabold metropolis-heading block text-center mb-4 text-brand-green-600">
                   ₹{totalPrice.toLocaleString()} {/* Format price with commas */}
                 </span>
                 <p className="text-sm mt-2 opacity-80 text-center mb-6 text-gray-600">Based on your selections above.</p>

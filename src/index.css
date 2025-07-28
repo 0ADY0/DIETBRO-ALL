@@ -9,8 +9,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* Alfa Slab One: For specific display headings */
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
-/* Gagalin: For specific display headings */
-@import url('https://fonts.googleapis.com/css2?family=Gagalin&display=swap');
 
 /* Universal font stack for consistent display across all platforms */
 /* Base font for the entire application with comprehensive fallbacks */
@@ -51,11 +49,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.gagalin-heading {
-  font-family: 'Gagalin', 'Brush Script MT', cursive, serif;
+.metropolis-heading {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
 }
 
 /* Universal font classes for consistent typography */
@@ -79,6 +78,14 @@
   font-display: swap;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.font-metropolis {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
 }
 
 /* Platform-specific optimizations */

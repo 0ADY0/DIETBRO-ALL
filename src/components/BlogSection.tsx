@@ -212,7 +212,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight gagalin-heading text-reveal">
+            <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight metropolis-heading text-reveal">
               Food Stories & Experiences
             </h2>
             <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto mb-8 text-reveal" style={{ animationDelay: '0.2s' }}>
@@ -263,7 +263,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-semibold gradient-text mb-3 gagalin-heading group-hover:text-brand-green-600 transition-colors">
+                  <h3 className="text-xl font-semibold gradient-text mb-3 metropolis-heading group-hover:text-brand-green-600 transition-colors">
                     {blog.title}
                   </h3>
                   
@@ -365,7 +365,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
             </div>
             
             <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
-              <h1 className="text-3xl font-bold text-gray-900 mb-4 gagalin-heading">
+              <h1 className="text-3xl font-bold text-gray-900 mb-4 metropolis-heading">
                 {selectedBlog.title}
               </h1>
               
@@ -411,7 +411,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-4xl">
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900 gagalin-heading">Share Your Food Story</h2>
+              <h2 className="text-2xl font-bold text-gray-900 metropolis-heading">Share Your Food Story</h2>
               <button 
                 onClick={() => setShowCreatePopup(false)}
                 className="p-2 hover:bg-gray-100 rounded-xl transition-colors"
