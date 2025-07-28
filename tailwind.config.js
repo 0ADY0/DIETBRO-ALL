@@ -18,13 +18,17 @@ export default {
         }
       },
       fontFamily: {
-        // Define your custom fonts here
-        'inter': ['Inter', 'sans-serif'], // For general text
-        'oswald': ['Oswald', 'sans-serif'], // For logo/strong headings
-        'alfa-slab-one': ['"Alfa Slab One"', 'serif'], // For specific headings, note quotes for multi-word names
-        'gagalin': ['Gagalin', 'cursive'], // For specific display headings
-        // You can also override the default 'sans' if you want Inter to be the default for font-sans
-        // 'sans': ['Inter', 'system-ui', 'sans-serif'],
+        // Universal font stacks for consistent display across all platforms
+        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        'inter': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        'oswald': ['Oswald', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        'montserrat': ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+        'alfa-slab-one': ['"Alfa Slab One"', 'Georgia', 'Times New Roman', 'serif'],
+        'gagalin': ['Gagalin', 'Brush Script MT', 'cursive', 'serif'],
+        // System font stacks for maximum compatibility
+        'system': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+        'ui': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
+        'mono': ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', 'monospace'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1.5' }],

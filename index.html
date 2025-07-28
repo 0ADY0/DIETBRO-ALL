@@ -4,10 +4,86 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dietbro Meal Delivery Website</title>
+    <title>DietBro - Your Personalized Meal Plan</title>
+    
+    <!-- Font preloading for better performance and consistent display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical fonts for universal compatibility -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap"></noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gagalin&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gagalin&display=swap"></noscript>
+    
+    <!-- Font loading optimization for universal compatibility -->
+    <style>
+      /* Font loading fallback to ensure text is visible immediately */
+      .font-loading {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      }
+      
+      /* Ensure fonts are loaded before showing content */
+      .fonts-loaded {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      }
+      
+      /* Platform-specific font smoothing */
+      @supports (-webkit-font-smoothing: antialiased) {
+        * {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+      
+      /* Windows-specific optimizations */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        * {
+          font-smooth: never;
+        }
+      }
+      
+      /* iOS Safari optimizations */
+      @supports (-webkit-touch-callout: none) {
+        * {
+          -webkit-text-size-adjust: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Font loading detection script -->
+    <script>
+      // Font loading detection for better user experience
+      if ('fonts' in document) {
+        Promise.all([
+          document.fonts.load('300 16px Inter'),
+          document.fonts.load('400 16px Inter'),
+          document.fonts.load('600 16px Inter'),
+          document.fonts.load('700 16px Inter'),
+          document.fonts.load('900 16px Montserrat'),
+          document.fonts.load('400 16px "Alfa Slab One"'),
+          document.fonts.load('400 16px Gagalin')
+        ]).then(() => {
+          document.documentElement.classList.add('fonts-loaded');
+        }).catch(() => {
+          // Fallback if font loading fails
+          document.documentElement.classList.add('font-loading');
+        });
+      } else {
+        // Fallback for browsers that don't support Font Loading API
+        document.documentElement.classList.add('font-loading');
+      }
+    </script>
   </body>
 </html>
