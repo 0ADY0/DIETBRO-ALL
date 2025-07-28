@@ -69,7 +69,7 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
               
               <div className="p-6">
                 {/* Apply font-oswald for the menu item names */}
-                <h3 className="text-xl font-bold gradient-text mb-2 font-oswald text-shadow">
+                <h3 className="text-xl font-bold gradient-text mb-2 font-heading text-shadow">
                   {item.name}
                 </h3>
                 <p className="text-gray-600 text-sm font-light">

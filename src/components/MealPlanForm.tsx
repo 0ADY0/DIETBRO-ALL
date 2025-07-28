@@ -140,7 +140,7 @@
                   </button>
                   <button
                     onClick={onBack}
-                    className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald"
+                    className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-heading"
                     style={{ outline: 'none', border: 'none', background: 'none', padding: 0, margin: 0 }}
                   >
                     DIETBRO

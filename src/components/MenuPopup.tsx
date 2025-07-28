@@ -217,7 +217,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
                 {/* Using font-oswald for logo consistency */}
                 <button
                   onClick={onLogoClick || onBack}
-                  className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald"
+                  className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-heading"
                   style={{ outline: 'none', border: 'none', background: 'none', padding: 0, margin: 0 }}
                 >
                   DIETBRO
@@ -266,7 +266,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
             {/* Title Section */}
             <div className="text-center mb-12">
               {/* Using font-oswald for heading consistency */}
-              <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight font-oswald">
+              <h1 className="text-4xl lg:text-5xl font-bold text-brand-green-600 mb-4 tracking-tight font-heading">
                 Our Top Picks
               </h1>
               <p className="text-lg text-gray-600 font-light mb-2">
@@ -332,7 +332,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
             <div className="text-center">
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50">
                 {/* Using font-oswald for heading consistency */}
-                <h2 className="text-2xl font-black text-gray-900 mb-4 font-oswald text-shadow">
+                <h2 className="text-2xl font-black text-gray-900 mb-4 font-heading text-shadow">
                   Want help building your perfect plan?
                 </h2>
                 <button
@@ -382,7 +382,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
                   />
                   
                   {/* Using font-oswald for meal name consistency */}
-                  <h1 className="text-3xl font-bold text-gray-900 mb-4 font-oswald">
+                  <h1 className="text-3xl font-bold text-gray-900 mb-4 font-heading">
                     {selectedMeal.name}
                   </h1>
                   
@@ -414,7 +414,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
                   {/* Nutrition Facts */}
                   <div className="bg-gradient-to-br from-brand-green-50 to-brand-green-100 rounded-2xl p-6">
                     {/* Using font-oswald for heading consistency */}
-                    <h3 className="text-xl font-bold text-brand-green-800 mb-4 font-oswald">
+                    <h3 className="text-xl font-bold text-brand-green-800 mb-4 font-heading">
                       Nutrition Facts
                     </h3>
                     <div className="grid grid-cols-2 gap-4">
@@ -448,7 +448,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
                   {/* Ingredients */}
                   <div>
                     {/* Using font-oswald for heading consistency */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-oswald">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-heading">
                       Ingredients
                     </h3>
                     <div className="flex flex-wrap gap-2">
@@ -466,7 +466,7 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
                   {/* Allergens */}
                   <div>
                     {/* Using font-oswald for heading consistency */}
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-oswald">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 font-heading">
                       Allergen Information
                     </h3>
                     <div className="flex flex-wrap gap-2">

@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted, /*onOrdersClick,*/ onMenu
             {/* Using font-oswald for logo consistency */}
             <button
               onClick={onLogoClick}
-              className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-oswald" // Added italic
+              className="text-2xl font-black italic text-brand-green-500 interactive hover:scale-105 transition-transform font-heading" // Added italic
             >
               DIETBRO
             </button>
