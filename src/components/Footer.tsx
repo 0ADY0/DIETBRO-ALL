@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ onGetStarted, /*onOrdersClick,*/ onMenu
           <div className="space-y-4">
             {/* Using font-oswald for logo consistency */}
             <h3 
-              className="text-2xl font-black italic text-brand-green-400 font-oswald cursor-pointer"
+              className="text-2xl font-black italic text-brand-green-400 font-heading cursor-pointer"
               onClick={onLogoClick || onGetStarted} // Assuming logo click might go to home or get started
             >
               DIETBRO

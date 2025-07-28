@@ -91,8 +91,8 @@
         }
       };
 
-      const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-      const dietaryOptions = ['Standard Meal', 'High Protein', 'Low Carb', 'Custom Meal'];
+      const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const dietaryOptions = ['High Protein', 'Low Carb'];
 
       const testimonials = [
         {
@@ -405,9 +405,6 @@
                             />
                             <span className="ml-2 text-sm text-gray-700">
                               {option}
-                              {option === 'Custom Meal' && (
-                                <span className="ml-1 text-xs text-brand-green-600 font-medium">(Special layout available)</span>
-                              )}
                             </span>
                           </label>
                         ))}

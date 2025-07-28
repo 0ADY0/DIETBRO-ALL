@@ -180,6 +180,11 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 /* Enhanced Utility Classes */
 @layer utilities {
   /* Advanced Shadows */
@@ -346,6 +351,11 @@
   /* Rotate Animation */
   .rotate-slow {
     animation: rotate-slow 20s linear infinite;
+  }
+
+  /* Rotating Animation */
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
   }
 
   /* Enhanced Gradients */
