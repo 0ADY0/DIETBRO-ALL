@@ -64,11 +64,11 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
             <div className="relative w-full h-80">
               {/* Center Image */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="floating-card bg-white rounded-3xl p-6 shadow-4xl hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 w-64 h-64">
+                <div className="floating-card bg-white rounded-3xl p-6 shadow-4xl hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 w-[450px] h-[450px]">
                   <img 
                     src="/Spicy peanut tofu[1].jpg" 
                     alt="Spicy peanut tofu meal" 
-                    className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover rounded-2xl hover:scale-250 transition-transform duration-300"
                   />
                 </div>
               </div>
@@ -76,10 +76,10 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               {/* Rotating Images - 4 Random Positions */}
               <div className="absolute inset-0 animate-spin-slow">
                 {/* Image 1 - Butter Chicken Style Tofu Bowl */}
-                <div className="absolute top-4 left-1/3 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
                     <img 
-                      src="/Spicy peanut tofu[1].jpg" 
+                      src="/Butter chicken-style tofu bowl.jpg" 
                       alt="Butter chicken style tofu bowl" 
                       className="w-full h-full object-cover"
                     />
@@ -87,10 +87,10 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 2 - Teriyaki Chicken Rice */}
-                <div className="absolute top-1/3 right-6 transform translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-1/3 right-8 transform translate-x-1/2 -translate-y-1/2">
                   <div className="w-28 h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
                     <img 
-                      src="/Spicy peanut tofu[1].jpg" 
+                      src="/Teriyaki chicken rice[1].jpg" 
                       alt="Teriyaki chicken rice" 
                       className="w-full h-full object-cover"
                     />
@@ -98,10 +98,10 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 3 - Honey Garlic Grilled Chicken Thighs */}
-                <div className="absolute bottom-1/4 left-1/4 transform -translate-x-1/2 translate-y-1/2">
+                <div className="absolute bottom-8 right-1/4 transform translate-x-1/2 translate-y-1/2">
                   <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
                     <img 
-                      src="/Spicy peanut tofu[1].jpg" 
+                      src="/Honey-garlic grilled chicken thighs .jpg" 
                       alt="Honey garlic grilled chicken thighs" 
                       className="w-full h-full object-cover"
                     />
@@ -109,10 +109,10 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 4 - Honey Chicken General Bowl */}
-                <div className="absolute bottom-8 right-1/3 transform translate-x-1/2 translate-y-1/2">
+                <div className="absolute bottom-0 right-1/5 transform translate-x-1/2 translate-y-1/2">
                   <div className="w-28 h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
                     <img 
-                      src="/Spicy peanut tofu[1].jpg" 
+                      src="/Honey Chicken General bowl.jpg" 
                       alt="Honey chicken general bowl" 
                       className="w-full h-full object-cover"
                     />
