@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative overflow-hidden py-12 sm:py-20 lg:py-28">
       {/* Enhanced Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-green-50 via-brand-green-100 to-brand-green-200"></div>
       
@@ -22,11 +22,11 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
         <div className="absolute bottom-1/3 right-1/4 w-8 h-8 bg-brand-green-400 rounded-full float" style={{ animationDelay: '2.5s' }}></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div className="space-y-8">
             {/* Enhanced Main Heading */}
-            <h1 className="text-5xl lg:text-7xl font-black leading-tight tracking-tight text-reveal font-heading text-brand-green-600 text-shadow-lg">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight tracking-tight text-reveal font-heading text-brand-green-600 text-shadow-lg">
               Real Food.<br />
               <span className="bg-gradient-to-r from-brand-green-600 to-brand-green-400 bg-clip-text text-transparent">
                 Real Goals.
@@ -35,13 +35,13 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
             </h1>
             
             {/* Enhanced Subtitle */}
-            <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed font-light text-reveal" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base sm:text-xl lg:text-2xl text-gray-700 leading-relaxed font-light text-reveal" style={{ animationDelay: '0.2s' }}>
               Fuel your fitness journey with chef-crafted, nutritionally 
               optimized, eco-friendly meals across Bangalore.
             </p>
 
             {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 text-reveal" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 text-reveal" style={{ animationDelay: '0.4s' }}>
               <button 
                 onClick={onGetStarted}
                 className="group relative bg-gradient-to-r from-brand-green-500 to-brand-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-brand-green-600 hover:to-brand-green-700 transition-all text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-2 hover:scale-105 interactive overflow-hidden"
@@ -61,23 +61,23 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
 
           <div className="relative text-reveal" style={{ animationDelay: '0.6s' }}>
             {/* Rotating Meal Gallery */}
-            <div className="relative w-full h-80">
+            <div className="relative w-full h-64 sm:h-80">
               {/* Center Image */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="floating-card bg-white rounded-3xl p-6 shadow-4xl hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 border border-gray-100 w-[450px] h-[450px]">
+                <div className="floating-card bg-white rounded-3xl p-2 sm:p-6 shadow-4xl hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-2 sm:hover:-translate-y-4 hover:rotate-1 border border-gray-100 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[450px] lg:h-[450px]">
                   <img 
                     src="/Spicy peanut tofu[1].jpg" 
                     alt="Spicy peanut tofu meal" 
-                    className="w-full h-full object-cover rounded-2xl hover:scale-250 transition-transform duration-300"
+                    className="w-full h-full object-cover rounded-2xl hover:scale-110 transition-transform duration-300"
                   />
                 </div>
               </div>
 
               {/* Rotating Images - 4 Random Positions */}
-              <div className="absolute inset-0 animate-spin-slow">
+              <div className="absolute inset-0 animate-spin-slow sm:animate-none">
                 {/* Image 1 - Butter Chicken Style Tofu Bowl */}
-                <div className="absolute top-0 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
+                <div className="absolute top-2 left-1/3 sm:top-0 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-16 h-16 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Butter chicken-style tofu bowl.jpg" 
                       alt="Butter chicken style tofu bowl" 
@@ -87,8 +87,8 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 2 - Teriyaki Chicken Rice */}
-                <div className="absolute top-1/3 right-8 transform translate-x-1/2 -translate-y-1/2">
-                  <div className="w-28 h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
+                <div className="absolute top-1/4 right-2 sm:top-1/3 sm:right-8 transform translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Teriyaki chicken rice[1].jpg" 
                       alt="Teriyaki chicken rice" 
@@ -98,8 +98,8 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 3 - Honey Garlic Grilled Chicken Thighs */}
-                <div className="absolute bottom-8 right-1/4 transform translate-x-1/2 translate-y-1/2">
-                  <div className="w-32 h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
+                <div className="absolute bottom-2 right-1/4 sm:bottom-8 sm:right-1/4 transform translate-x-1/2 translate-y-1/2">
+                  <div className="w-16 h-16 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Honey-garlic grilled chicken thighs .jpg" 
                       alt="Honey garlic grilled chicken thighs" 
@@ -109,8 +109,8 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 4 - Honey Chicken General Bowl */}
-                <div className="absolute bottom-0 right-1/5 transform translate-x-1/2 translate-y-1/2">
-                  <div className="w-28 h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-white">
+                <div className="absolute bottom-2 right-1/6 sm:bottom-0 sm:right-1/5 transform translate-x-1/2 translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Honey Chicken General bowl.jpg" 
                       alt="Honey chicken general bowl" 
