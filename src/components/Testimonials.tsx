@@ -11,8 +11,8 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
   const testimonials = [
     {
       id: 1,
-      name: "Harish Uthayakumar",
-      role: "Entrepreneur, Co-Founder bluelearn",
+      name: "Adhythyan K S",
+      role: "College Student",
       image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
       quote: "I have tried a lot of food subscriptions in Bangalore but either they were unhealthy or not customized. Dietbro has made me feel healthier and better. The meals are home cooked and its been helping me in daily workouts too."
     },
