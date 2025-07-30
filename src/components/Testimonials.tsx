@@ -11,38 +11,24 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
   const testimonials = [
     {
       id: 1,
-      name: "Vaishpay Ramesh",
-      role: "Actor/Model",
-      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-      quote: "Dietbro has completely transformed my mealtime routine! The meals are fresh, delicious, and perfectly portioned."
+      name: "Harish Uthayakumar",
+      role: "Entrepreneur, Co-Founder bluelearn",
+      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+      quote: "I have tried a lot of food subscriptions in Bangalore but either they were unhealthy or not customized. Dietbro has made me feel healthier and better. The meals are home cooked and its been helping me in daily workouts too."
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      role: "Software Engineer",
+      name: "Jyothi Jangid",
+      role: "Event Organizer",
       image: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-      quote: "As a busy professional, Dietbro saves me so much time. The quality is outstanding and the variety keeps me excited about healthy eating."
+      quote: "Have started my fitness journey few months ago and let me tell you that Dietbro has been my real friend till now. It was quite difficult to manage work and diet, but now I get breakfast, lunch and dinner delivered to my door with very affordable monthly subscription. Thanks to Dietbro for all they do."
     },
     {
       id: 3,
-      name: "Arjun Patel",
-      role: "Fitness Trainer",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-      quote: "I recommend Dietbro to all my clients. The nutritional balance is perfect for anyone serious about their fitness goals."
-    },
-    {
-      id: 4,
-      name: "Sneha Reddy",
-      role: "Marketing Manager",
-      image: "https://images.pexels.com/photos/3763152/pexels-photo-3763152.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-      quote: "The convenience and taste of Dietbro meals have made healthy eating effortless. I've never felt better!"
-    },
-    {
-      id: 5,
-      name: "Rohit Kumar",
-      role: "Entrepreneur",
-      image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
-      quote: "Dietbro understands what busy people need. Fresh, healthy meals delivered right to my door - it's a game changer!"
+      name: "Santhosh Reddy",
+      role: "Actor, Model, Entrepreneur",
+      image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop",
+      quote: "I wanted to have healthy meals but was blown away by the taste and quality. I said to myself 'if Dietbro can make healthy food taste this good, it's time to commit to my fitness goals'. The convenience and variety are unmatched!"
     }
   ];
 
@@ -72,97 +58,56 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
       
       <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight metropolis-heading text-reveal">
-            Bangalore's #1 Meal Subscription choice
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight font-heading text-reveal">
+            What our <span className="text-brand-green-600">Customers</span> are Saying?
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 font-light max-w-3xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
-            Dietbro is setting new standards for taste and quality with fresh, chef-crafted meals.
-          </p>
         </div>
 
-        {/* Testimonials Slider */}
-        <div className="mb-10 sm:mb-16 text-reveal" style={{ animationDelay: '0.4s' }}>
-          <div className="bg-gradient-brand rounded-3xl p-4 sm:p-8 lg:p-12 relative overflow-hidden shadow-4xl hover:shadow-glow-lg transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-green-500 to-brand-green-700 opacity-90"></div>
-            
-            {/* Floating Elements */}
-            <div className="absolute top-4 left-4 w-16 h-16 bg-white/10 rounded-full float"></div>
-            <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/10 rounded-full float" style={{ animationDelay: '1s' }}></div>
-            
-            <div className="relative z-10">
-              <h3 className="text-lg sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-8 text-center metropolis-heading text-shadow-lg">
-                Our Customer Testimonial about us
-              </h3>
-
-              {/* Testimonial Content */}
-              <div className="relative">
-                <div className="flex transition-transform duration-500 ease-in-out" 
-                     style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                  {testimonials.map((testimonial) => (
-                    <div key={testimonial.id} className="w-full flex-shrink-0">
-                      <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row items-center max-w-4xl mx-auto px-2">
-                        {/* Quote */}
-                        <div className="flex-1 text-center lg:text-left">
-                          <div className="floating-card bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl relative hover:shadow-glow transition-all duration-500">
-                            <div className="absolute -bottom-4 left-8 w-8 h-8 bg-white transform rotate-45"></div>
-                            <blockquote className="text-gray-800 text-base sm:text-lg lg:text-xl font-medium italic leading-relaxed">
-                              "{testimonial.quote}"
-                            </blockquote>
-                          </div>
-                        </div>
-
-                        {/* Profile */}
-                        <div className="flex-shrink-0 text-center">
-                          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden mx-auto mb-2 sm:mb-4 border-4 border-white shadow-glow hover:scale-105 sm:hover:scale-110 transition-transform duration-300 interactive">
-                            <img 
-                              src={testimonial.image} 
-                              alt={testimonial.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <h4 className="text-white font-bold text-base sm:text-lg lg:text-xl mb-1">
-                            {testimonial.name}
-                          </h4>
-                          <p className="text-brand-green-100 font-medium text-xs sm:text-base">
-                            {testimonial.role}
-                          </p>
-                        </div>
-                      </div>
+        {/* Testimonials Cards */}
+        <div className="mb-16 text-reveal" style={{ animationDelay: '0.4s' }}>
+          <div className="relative">
+            {/* Testimonial Cards Container */}
+            <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4">
+              {testimonials.map((testimonial, index) => (
+                <div 
+                  key={testimonial.id} 
+                  className="flex-shrink-0 w-80 sm:w-96 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                >
+                  {/* Quote */}
+                  <blockquote className="text-gray-700 text-sm leading-relaxed mb-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  {/* Customer Info */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-gray-200">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  ))}
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-500 text-xs">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Navigation Arrows */}
-                <button 
-                  onClick={prevSlide}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 glass-card hover:bg-white/30 text-white p-3 rounded-full transition-all backdrop-blur-sm hover:scale-110 interactive"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                  onClick={nextSlide}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 glass-card hover:bg-white/30 text-white p-3 rounded-full transition-all backdrop-blur-sm hover:scale-110 interactive"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-
-              {/* Dots Indicator */}
-              <div className="flex justify-center mt-6 sm:mt-8 gap-2 sm:gap-3">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentSlide 
-                        ? 'bg-white scale-125 glow' 
-                        : 'bg-white/50 hover:bg-white/70'
-                    } interactive`}
-                  />
-                ))}
-              </div>
+              ))}
             </div>
+
+            {/* Navigation Arrow */}
+            <button 
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 text-gray-600 p-3 rounded-full transition-all hover:scale-110 shadow-lg"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
 
