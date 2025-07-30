@@ -228,83 +228,83 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, /*onOrdersC
           </div>
 
           {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Side - Top Seller Meals Slider and Preferences */}
-            <div className="space-y-8">
-              {/* Top Seller Meals Slider */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50">
-                <h3 className="text-2xl font-bold text-brand-green-600 mb-6 text-center metropolis-heading">
-                  🔥 Top Seller Meals
-                </h3>
-                
-                <div className="relative">
-                  {/* Slider Container */}
-                  <div className="overflow-hidden rounded-2xl">
-                    <div
-                      className="flex transition-transform duration-500 ease-in-out"
-                      style={{ transform: `translateX(-${currentMealSlide * 100}%)` }}
-                    >
-                      {topSellerMeals.map((meal) => (
-                        <div key={meal.id} className="w-full flex-shrink-0">
-                          <div className="relative">
-                            <img
-                              src={meal.image}
-                              alt={meal.name}
-                              className="w-full h-64 object-cover rounded-2xl"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl"></div>
-                            
-                            {/* Content Overlay */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                              <div className="flex items-center gap-2 mb-2">
-                                <div className="flex items-center gap-1">
-                                  <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                                  <span className="text-sm font-medium">{meal.rating}</span>
-                                </div>
-                                <span className="text-sm bg-brand-green-500 px-2 py-1 rounded-full">
-                                  {meal.price}
-                                </span>
+          <div className="space-y-8">
+            {/* Top Seller Meals Slider */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50">
+              <h3 className="text-2xl font-bold text-brand-green-600 mb-6 text-center metropolis-heading">
+                🔥 Top Seller Meals
+              </h3>
+              
+              <div className="relative">
+                {/* Slider Container */}
+                <div className="overflow-hidden rounded-2xl">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentMealSlide * 100}%)` }}
+                  >
+                    {topSellerMeals.map((meal) => (
+                      <div key={meal.id} className="w-full flex-shrink-0">
+                        <div className="relative">
+                          <img
+                            src={meal.image}
+                            alt={meal.name}
+                            className="w-full h-64 object-cover rounded-2xl"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl"></div>
+                          
+                          {/* Content Overlay */}
+                          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <div className="flex items-center gap-2 mb-2">
+                              <div className="flex items-center gap-1">
+                                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                                <span className="text-sm font-medium">{meal.rating}</span>
                               </div>
-                              <h4 className="text-xl font-bold mb-1">{meal.name}</h4>
-                              <p className="text-sm text-gray-200 mb-2">{meal.description}</p>
-                              <div className="flex gap-4 text-xs">
-                                <span className="bg-white/20 px-2 py-1 rounded">{meal.calories}</span>
-                                <span className="bg-white/20 px-2 py-1 rounded">{meal.protein}</span>
-                              </div>
+                              <span className="text-sm bg-brand-green-500 px-2 py-1 rounded-full">
+                                {meal.price}
+                              </span>
+                            </div>
+                            <h4 className="text-xl font-bold mb-1">{meal.name}</h4>
+                            <p className="text-sm text-gray-200 mb-2">{meal.description}</p>
+                            <div className="flex gap-4 text-xs">
+                              <span className="bg-white/20 px-2 py-1 rounded">{meal.calories}</span>
+                              <span className="bg-white/20 px-2 py-1 rounded">{meal.protein}</span>
                             </div>
                           </div>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
-                  
-                  {/* Navigation Arrows */}
-                  <button
-                    onClick={prevMealSlide}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-brand-green-600 p-2 rounded-full transition-all hover:scale-110 shadow-lg"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={nextMealSlide}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-brand-green-600 p-2 rounded-full transition-all hover:scale-110 shadow-lg"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
                 </div>
                 
-                {/* Progress Bar */}
-                <div className="mt-6">
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      className="bg-gradient-brand h-2 rounded-full transition-all duration-500 ease-in-out"
-                      style={{ width: `${((currentMealSlide + 1) / topSellerMeals.length) * 100}%` }}
-                    ></div>
-                  </div>
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevMealSlide}
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-brand-green-600 p-2 rounded-full transition-all hover:scale-110 shadow-lg"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextMealSlide}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-brand-green-600 p-2 rounded-full transition-all hover:scale-110 shadow-lg"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+              
+              {/* Progress Bar */}
+              <div className="mt-6">
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    className="bg-gradient-brand h-2 rounded-full transition-all duration-500 ease-in-out"
+                    style={{ width: `${((currentMealSlide + 1) / topSellerMeals.length) * 100}%` }}
+                  ></div>
                 </div>
               </div>
+            </div>
 
-              {/* Preferences Panel */}
+            {/* Preferences and Price Panel - Side by Side */}
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Left Side - Preferences Panel */}
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50">
                 <div className="space-y-6">
                   {/* Meal Preferences (Lunch/Dinner/Both) */}
@@ -388,11 +388,9 @@ const PlansPage: React.FC<PlansPageProps> = ({ onBack, onGetStarted, /*onOrdersC
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Right Side - Consolidated Plan and Total Price */}
-            <div className="space-y-6">
-              <div className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50 text-brand-green-600">
+              {/* Right Side - Price and Features */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-brand-green-100/50 text-brand-green-600">
                 <h3 className="text-xl font-bold mb-2 text-center metropolis-heading text-brand-green-600">Your Estimated Plan Price:</h3>
                 <span className="text-5xl font-extrabold metropolis-heading block text-center mb-4 text-brand-green-600">
                   ₹{totalPrice.toLocaleString()} {/* Format price with commas */}
