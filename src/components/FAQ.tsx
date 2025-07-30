@@ -24,6 +24,16 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
     );
   };
 
+  const scrollToCategory = (categoryId: string) => {
+    const element = document.getElementById(`category-${categoryId}`);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    }
+  };
+
   const categories = [
     {
       id: 'product',
@@ -192,8 +202,8 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
                 Locations
               </button>
               <button
-                onClick={onBack}
-                className="text-gray-600 hover:text-brand-green-500 transition-colors font-medium text-sm"
+                onClick={() => {}} // FAQ button should do nothing when already on FAQ page
+                className="text-brand-green-500 font-medium text-sm"
               >
                 FAQ
               </button>
@@ -236,7 +246,10 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
             {categories.map((category) => (
               <div key={category.id} className="text-center">
-                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50 group cursor-pointer">
+                <div 
+                  onClick={() => scrollToCategory(category.id)}
+                  className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50 group cursor-pointer hover:bg-brand-green-50 hover:border-brand-green-200 transform hover:scale-105"
+                >
                   <div className="flex justify-center mb-3">
                     {category.icon}
                   </div>
@@ -251,7 +264,11 @@ const FAQ: React.FC<FAQProps> = ({ onBack, onMenuClick, onGetStarted, onPlansCli
           {/* FAQ Sections */}
           <div className="space-y-8">
             {filteredCategories.map((category) => (
-              <div key={category.id} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50">
+              <div 
+                key={category.id} 
+                id={`category-${category.id}`}
+                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50 scroll-mt-8"
+              >
                 {/* Using font-gagalin for category title consistency */}
                 <h2 className="text-2xl font-bold text-brand-green-600 mb-6 font-metropolis">
                   {category.title}
