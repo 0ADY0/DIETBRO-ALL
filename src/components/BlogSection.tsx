@@ -202,7 +202,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
 
   return (
     <>
-      <section id="blogs" className="py-10 sm:py-20 lg:py-28 bg-transparent relative overflow-hidden">
+      <section id="blogs" className="py-8 sm:py-16 lg:py-20 bg-transparent relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
           {/* Header */}

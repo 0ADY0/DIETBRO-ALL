@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   return (
-    <section className="relative overflow-hidden py-12 sm:py-20 lg:py-16">
+    <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16">
 
       
       <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8 relative z-10">
@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               {/* Rotating Images - 4 Random Positions */}
               <div className="absolute inset-0 animate-spin-slow">
                 {/* Image 1 - Butter Chicken Style Tofu Bowl */}
-                <div className="absolute top-2 left-1/3 sm:top-0 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-4 left-1/2 sm:top-2 sm:left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-16 h-16 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Butter chicken-style tofu bowl.jpg" 
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 2 - Teriyaki Chicken Rice */}
-                <div className="absolute top-1/4 right-2 sm:top-1/3 sm:right-8 transform translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-1/3 right-4 sm:top-1/3 sm:right-12 transform translate-x-1/2 -translate-y-1/2">
                   <div className="w-14 h-14 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Teriyaki chicken rice[1].jpg" 
@@ -86,7 +86,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 3 - Honey Garlic Grilled Chicken Thighs */}
-                <div className="absolute bottom-2 right-1/4 sm:bottom-8 sm:right-1/4 transform translate-x-1/2 translate-y-1/2">
+                <div className="absolute bottom-4 right-1/3 sm:bottom-4 sm:right-1/3 transform translate-x-1/2 translate-y-1/2">
                   <div className="w-16 h-16 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Honey-garlic grilled chicken thighs .jpg" 
@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
                 </div>
 
                 {/* Image 4 - Honey Chicken General Bowl */}
-                <div className="absolute bottom-2 right-1/6 sm:bottom-0 sm:right-1/5 transform translate-x-1/2 translate-y-1/2">
+                <div className="absolute bottom-4 left-1/3 sm:bottom-4 sm:left-1/3 transform -translate-x-1/2 translate-y-1/2">
                   <div className="w-14 h-14 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">
                     <img 
                       src="/Honey Chicken General bowl.jpg" 
@@ -109,13 +109,13 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               </div>
 
               {/* Enhanced Floating Badges */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-brand-green-500 to-brand-green-600 text-white px-4 py-2 rounded-2xl font-semibold shadow-lg text-sm transform rotate-3 hover:rotate-6 transition-transform bounce-subtle interactive">
+              <div className="absolute top-2 right-2 bg-gradient-to-r from-brand-green-500 to-brand-green-600 text-white px-4 py-2 rounded-2xl font-semibold shadow-lg text-sm transform rotate-3 hover:rotate-6 transition-transform bounce-subtle interactive">
                 <div className="flex items-center gap-1">
                   <Star className="w-3 h-3 fill-white" />
                   Fresh Daily
                 </div>
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-brand-green-600 to-brand-green-700 text-white px-4 py-2 rounded-2xl font-semibold shadow-lg text-sm transform -rotate-3 hover:-rotate-6 transition-transform bounce-subtle interactive" style={{ animationDelay: '1s' }}>
+              <div className="absolute bottom-2 left-2 bg-gradient-to-r from-brand-green-600 to-brand-green-700 text-white px-4 py-2 rounded-2xl font-semibold shadow-lg text-sm transform -rotate-3 hover:-rotate-6 transition-transform bounce-subtle interactive" style={{ animationDelay: '1s' }}>
                 <div className="flex items-center gap-1">
                   <CheckCircle className="w-3 h-3" />
                   Chef Crafted
@@ -123,7 +123,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               </div>
               
               {/* New Floating Badge */}
-              <div className="absolute top-1/2 -left-4 bg-white/90 backdrop-blur-sm text-brand-green-600 px-3 py-2 rounded-xl font-semibold shadow-lg text-xs transform -rotate-12 hover:rotate-0 transition-transform interactive">
+              <div className="absolute top-1/2 left-2 bg-white/90 backdrop-blur-sm text-brand-green-600 px-3 py-2 rounded-xl font-semibold shadow-lg text-xs transform -rotate-12 hover:rotate-0 transition-transform interactive">
                 <div className="flex items-center gap-1">
                   <Clock className="w-3 h-3" />
                   30 min

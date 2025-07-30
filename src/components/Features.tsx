@@ -25,7 +25,7 @@ const Features: React.FC<FeaturesProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-transparent relative overflow-hidden">
+    <section className="py-12 lg:py-20 bg-transparent relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

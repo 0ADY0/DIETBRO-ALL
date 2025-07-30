@@ -34,7 +34,7 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
   ];
 
   return (
-    <section className="relative py-10 sm:py-24 bg-transparent overflow-hidden">
+    <section className="relative py-8 sm:py-16 bg-transparent overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
