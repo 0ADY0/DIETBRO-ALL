@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowLeft, X, Star, Clock, Flame, Users } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, X, Star, Clock, Flame, Users, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface MenuPopupProps {
   onBack: () => void;
@@ -296,37 +296,12 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
               </div>
             </div>
 
-            {/* Meal Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-              {filteredMeals.map((meal) => (
-                <div
-                  key={meal.id}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-brand-green-100/50 group transform hover:-translate-y-1 cursor-pointer"
-                  onClick={() => handleMealClick(meal)}
-                >
-                  <div className="relative">
-                    <img
-                      src={meal.image}
-                      alt={meal.name}
-                      className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
-                      <Star className="w-3 h-3 text-yellow-400 fill-current" />
-                      <span className="text-xs font-medium">{meal.rating}</span>
-                    </div>
-                    <div className="absolute bottom-2 left-2 bg-brand-green-500 text-white px-2 py-1 rounded-lg text-xs font-medium">
-                      {meal.calories} cal
-                    </div>
-                  </div>
-                  <div className="p-3">
-                    <h3 className="text-sm font-medium text-gray-900 leading-tight mb-1">
-                      {meal.name}
-                    </h3>
-                    <p className="text-xs text-gray-600">{meal.protein} protein</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Mortal Kombat Style Meal Carousel */}
+            <MealCarousel 
+              meals={filteredMeals}
+              onMealSelect={handleMealClick}
+              onGetStarted={onGetStarted}
+            />
 
             {/* Bottom Section */}
             <div className="text-center">
@@ -495,6 +470,258 @@ const MenuPopup: React.FC<MenuPopupProps> = ({ onBack, onGetStarted, /*onOrdersC
         </div>
       )}
     </>
+  );
+};
+
+// New MealCarousel component
+interface MealCarouselProps {
+  meals: MealItem[];
+  onMealSelect: (meal: MealItem) => void;
+  onGetStarted: () => void;
+}
+
+const MealCarousel: React.FC<MealCarouselProps> = ({ meals, onMealSelect, onGetStarted }) => {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const thumbnailRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          setSelectedIndex(prev => prev > 0 ? prev - 1 : meals.length - 1);
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          setSelectedIndex(prev => prev < meals.length - 1 ? prev + 1 : 0);
+          break;
+        case 'Enter':
+          e.preventDefault();
+          onMealSelect(meals[selectedIndex]);
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex, meals, onMealSelect]);
+
+  // Auto-scroll to selected thumbnail
+  useEffect(() => {
+    if (thumbnailRefs.current[selectedIndex]) {
+      thumbnailRefs.current[selectedIndex]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [selectedIndex]);
+
+  const handleThumbnailClick = (index: number) => {
+    setSelectedIndex(index);
+  };
+
+  const handleThumbnailHover = (index: number) => {
+    setHoveredIndex(index);
+  };
+
+  const handleThumbnailLeave = () => {
+    setHoveredIndex(null);
+  };
+
+  const navigateLeft = () => {
+    setSelectedIndex(prev => prev > 0 ? prev - 1 : meals.length - 1);
+  };
+
+  const navigateRight = () => {
+    setSelectedIndex(prev => prev < meals.length - 1 ? prev + 1 : 0);
+  };
+
+  const currentMeal = meals[selectedIndex];
+  const displayMeal = hoveredIndex !== null ? meals[hoveredIndex] : currentMeal;
+
+  return (
+    <div className="w-full max-w-6xl mx-auto">
+      {/* Large Preview Section */}
+      <div className="relative mb-8">
+        <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-brand-green-100/50 overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Image Section */}
+            <div className="relative">
+              <img
+                src={displayMeal.image}
+                alt={displayMeal.name}
+                className="w-full h-80 object-cover rounded-2xl shadow-lg transition-all duration-500"
+              />
+              <div className="absolute top-4 left-4 flex items-center gap-2">
+                <div className="bg-yellow-100 px-3 py-1 rounded-full flex items-center gap-1">
+                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                  <span className="text-sm font-medium text-yellow-700">{displayMeal.rating}</span>
+                </div>
+                <div className="bg-brand-green-100 px-3 py-1 rounded-full flex items-center gap-1">
+                  <Flame className="w-4 h-4 text-brand-green-600" />
+                  <span className="text-sm font-medium">{displayMeal.calories} cal</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Info Section */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2 font-heading">
+                  {displayMeal.name}
+                </h2>
+                <p className="text-gray-600 leading-relaxed">
+                  {displayMeal.description}
+                </p>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-gradient-to-br from-brand-green-50 to-brand-green-100 rounded-xl">
+                  <Clock className="w-6 h-6 text-brand-green-600 mx-auto mb-2" />
+                  <p className="text-lg font-bold text-brand-green-700">{displayMeal.cookTime}</p>
+                  <p className="text-sm text-brand-green-600">Cook Time</p>
+                </div>
+                <div className="text-center p-4 bg-gradient-to-br from-brand-green-50 to-brand-green-100 rounded-xl">
+                  <Users className="w-6 h-6 text-brand-green-600 mx-auto mb-2" />
+                  <p className="text-lg font-bold text-brand-green-700">{displayMeal.servings}</p>
+                  <p className="text-sm text-brand-green-600">Serving</p>
+                </div>
+                <div className="text-center p-4 bg-gradient-to-br from-brand-green-50 to-brand-green-100 rounded-xl">
+                  <Flame className="w-6 h-6 text-brand-green-600 mx-auto mb-2" />
+                  <p className="text-lg font-bold text-brand-green-700">{displayMeal.protein}</p>
+                  <p className="text-sm text-brand-green-600">Protein</p>
+                </div>
+              </div>
+
+              {/* Key Ingredients */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 font-heading">Key Ingredients</h3>
+                <div className="flex flex-wrap gap-2">
+                  {displayMeal.ingredients.slice(0, 6).map((ingredient, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                    >
+                      {ingredient}
+                    </span>
+                  ))}
+                  {displayMeal.ingredients.length > 6 && (
+                    <span className="px-3 py-1 bg-brand-green-100 text-brand-green-700 rounded-full text-sm font-medium">
+                      +{displayMeal.ingredients.length - 6} more
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <button
+                onClick={() => onMealSelect(displayMeal)}
+                className="w-full bg-brand-green-500 text-white px-6 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg"
+              >
+                Select This Meal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Thumbnail Carousel */}
+      <div className="relative">
+        {/* Navigation Arrows */}
+        <button
+          onClick={navigateLeft}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-xl transition-all border border-brand-green-100/50 hover:bg-brand-green-50"
+        >
+          <ChevronLeft className="w-6 h-6 text-brand-green-600" />
+        </button>
+        
+        <button
+          onClick={navigateRight}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-xl transition-all border border-brand-green-100/50 hover:bg-brand-green-50"
+        >
+          <ChevronRight className="w-6 h-6 text-brand-green-600" />
+        </button>
+
+        {/* Thumbnail Container */}
+        <div 
+          ref={carouselRef}
+          className="flex gap-4 overflow-x-auto scrollbar-hide px-4 py-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {meals.map((meal, index) => (
+            <div
+              key={meal.id}
+              ref={el => thumbnailRefs.current[index] = el}
+              onClick={() => handleThumbnailClick(index)}
+              onMouseEnter={() => handleThumbnailHover(index)}
+              onMouseLeave={handleThumbnailLeave}
+              className={`
+                relative flex-shrink-0 cursor-pointer transition-all duration-300 transform
+                ${selectedIndex === index 
+                  ? 'scale-110 z-20' 
+                  : hoveredIndex === index 
+                    ? 'scale-105 z-10' 
+                    : 'scale-100'
+                }
+              `}
+            >
+              {/* Thumbnail Image */}
+              <div className={`
+                relative w-24 h-24 rounded-2xl overflow-hidden border-4 transition-all duration-300
+                ${selectedIndex === index
+                  ? 'border-brand-green-500 shadow-2xl shadow-brand-green-500/50'
+                  : hoveredIndex === index
+                    ? 'border-brand-green-300 shadow-lg'
+                    : 'border-transparent shadow-md'
+                }
+              `}>
+                <img
+                  src={meal.image}
+                  alt={meal.name}
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Selection Indicator */}
+                {selectedIndex === index && (
+                  <div className="absolute inset-0 bg-brand-green-500/20 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brand-green-500 rounded-full flex items-center justify-center">
+                      <div className="w-4 h-4 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Meal Name */}
+              <div className="mt-2 text-center">
+                <p className="text-xs font-medium text-gray-900 truncate max-w-24">
+                  {meal.name}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {meal.calories} cal
+                </p>
+              </div>
+
+              {/* Glow Effect for Selected */}
+              {selectedIndex === index && (
+                <div className="absolute inset-0 rounded-2xl bg-brand-green-500/20 blur-xl -z-10 animate-pulse"></div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Instructions */}
+        <div className="text-center mt-6">
+          <p className="text-sm text-gray-500">
+            Use arrow keys or click to navigate • Press Enter to select • Hover for preview
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 

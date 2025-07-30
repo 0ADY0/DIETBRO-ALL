@@ -34,45 +34,40 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
   ];
 
   return (
-    <section className="relative py-24 bg-gray-50 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-40 h-40 bg-brand-green-200 rounded-full blur-3xl float"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-brand-green-200 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
-      </div>
+    <section className="relative py-10 sm:py-24 bg-transparent overflow-hidden">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-16">
           {/* Apply font-gagalin for the main heading */}
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight font-metropolis text-reveal">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight font-metropolis text-reveal">
             Explore Our Menu
           </h2>
-          <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
             Browse the 40 gourmet prepared meals featured on this month's menu
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {menuItems.map((item, index) => (
-            <div key={index} className="floating-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-glow transition-all duration-500 group stagger-animation hover-lift">
+            <div key={index} className="floating-card bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-glow transition-all duration-500 group stagger-animation hover-lift mx-2">
               <div className="relative overflow-hidden">
                 <img 
                   src={item.image} 
                   alt={item.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-40 sm:h-64 object-cover group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 glass-card px-3 py-1 rounded-full flex items-center gap-1 bounce-subtle">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 glass-card px-2 sm:px-3 py-1 rounded-full flex items-center gap-1 bounce-subtle">
                   <Star className="w-4 h-4 text-yellow-400 fill-current" />
                   <span className="text-sm font-medium">{item.rating}</span>
                 </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 {/* Apply font-oswald for the menu item names */}
-                <h3 className="text-xl font-bold gradient-text mb-2 font-heading text-shadow">
+                <h3 className="text-base sm:text-xl font-bold gradient-text mb-2 font-heading text-shadow">
                   {item.name}
                 </h3>
-                <p className="text-gray-600 text-sm font-light">
+                <p className="text-gray-600 text-xs sm:text-sm font-light">
                   Chef-crafted with premium ingredients
                 </p>
               </div>
@@ -80,10 +75,10 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-10 sm:mt-16">
           <button 
             onClick={onGetStarted}
-            className="btn-primary bg-gradient-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+            className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
           >
             Explore menu
           </button>

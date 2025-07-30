@@ -7,20 +7,8 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
   return (
-    <section className="relative overflow-hidden py-12 sm:py-20 lg:py-28">
-      {/* Enhanced Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-green-50 via-brand-green-100 to-brand-green-200"></div>
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-brand-green-300 rounded-full float"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-brand-green-300 rounded-full float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-brand-green-300 rounded-full float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-40 right-1/3 w-20 h-20 bg-brand-green-300 rounded-full float" style={{ animationDelay: '0.5s' }}></div>
-        {/* Add more floating elements */}
-        <div className="absolute top-1/4 left-1/3 w-12 h-12 bg-brand-green-400 rounded-full float" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute bottom-1/3 right-1/4 w-8 h-8 bg-brand-green-400 rounded-full float" style={{ animationDelay: '2.5s' }}></div>
-      </div>
+    <section className="relative overflow-hidden py-12 sm:py-20 lg:py-16">
+
       
       <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
@@ -61,10 +49,10 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
 
           <div className="relative text-reveal" style={{ animationDelay: '0.6s' }}>
             {/* Rotating Meal Gallery */}
-            <div className="relative w-full h-64 sm:h-80">
+            <div className="relative w-full h-80 sm:h-96 lg:h-[500px]">
               {/* Center Image */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="floating-card bg-white rounded-3xl p-2 sm:p-6 shadow-4xl hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-2 sm:hover:-translate-y-4 hover:rotate-1 border border-gray-100 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[450px] lg:h-[450px]">
+                <div className="floating-card rounded-3xl p-2 sm:p-6 shadow-4xl hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-2 sm:hover:-translate-y-4 hover:rotate-1 w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px]">
                   <img 
                     src="/Spicy peanut tofu[1].jpg" 
                     alt="Spicy peanut tofu meal" 
@@ -74,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               </div>
 
               {/* Rotating Images - 4 Random Positions */}
-              <div className="absolute inset-0 animate-spin-slow sm:animate-none">
+              <div className="absolute inset-0 animate-spin-slow">
                 {/* Image 1 - Butter Chicken Style Tofu Bowl */}
                 <div className="absolute top-2 left-1/3 sm:top-0 sm:left-1/4 transform -translate-x-1/2 -translate-y-1/2">
                   <div className="w-16 h-16 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 sm:hover:scale-110 border-2 border-white">

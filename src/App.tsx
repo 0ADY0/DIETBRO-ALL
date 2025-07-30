@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import HowItWorks from './components/HowItWorks';
-import Features from './components/Features';
-import Menu from './components/Menu';
-import BlogSection from './components/BlogSection';
-import Testimonials from './components/Testimonials';
+import HomePage from './components/Home';
 import Footer from './components/Footer';
 import MealPlanForm from './components/MealPlanForm';
 import FAQ from './components/FAQ';
@@ -126,15 +121,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-brand-green-100 via-brand-green-200 to-brand-green-300">
       {/* Pass all common navigation props to Header and Footer */}
       <Header {...commonNavProps} />
-      <Hero onGetStarted={handleGetStarted} />
-      <HowItWorks onGetStarted={handleGetStarted} />
-      <Features onGetStarted={handleGetStarted} />
-      <Menu onGetStarted={handleGetStarted} />
-      <BlogSection onGetStarted={handleGetStarted} onBlogsClick={handleBlogsClick} />
-      <Testimonials onGetStarted={handleGetStarted} />
+      <HomePage />
       <Footer {...commonNavProps} />
     </div>
   );

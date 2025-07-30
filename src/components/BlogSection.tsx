@@ -202,26 +202,21 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
 
   return (
     <>
-      <section id="blogs" className="py-20 lg:py-28 bg-gradient-to-br from-brand-green-50 via-white to-brand-green-50 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-brand-green-500 rounded-full blur-3xl float"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 bg-brand-green-600 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
-        </div>
+      <section id="blogs" className="py-10 sm:py-20 lg:py-28 bg-transparent relative overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight metropolis-heading text-reveal">
+          <div className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight metropolis-heading text-reveal">
               Food Stories & Experiences
             </h2>
-            <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto mb-8 text-reveal" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base sm:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-6 sm:mb-8 text-reveal" style={{ animationDelay: '0.2s' }}>
               Share your culinary journey, discover amazing recipes, and connect with fellow food lovers in our community.
             </p>
             
             <button 
               onClick={() => setShowCreatePopup(true)}
-              className="btn-primary bg-gradient-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive inline-flex items-center gap-3"
+              className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive inline-flex items-center gap-2 sm:gap-3"
             >
               <PenTool className="w-5 h-5" />
               Share Your Food Story
@@ -230,7 +225,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
 
           {/* Blog Grid */}
           {loading ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[...Array(6)].map((_, index) => (
                 <div key={index} className="floating-card bg-white rounded-2xl p-6 shadow-lg animate-pulse">
                   <div className="h-4 bg-gray-200 rounded mb-4"></div>
@@ -244,11 +239,11 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
               ))}
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {blogs.map((blog, index) => (
                 <div 
                   key={blog._id} 
-                  className="floating-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-glow transition-all duration-500 group stagger-animation hover-lift cursor-pointer"
+                  className="floating-card bg-white rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-glow transition-all duration-500 group stagger-animation hover-lift cursor-pointer mx-2"
                   onClick={() => handleBlogClick(blog)}
                 >
                   <div className="flex items-center gap-2 mb-3">
@@ -263,15 +258,15 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-semibold gradient-text mb-3 metropolis-heading group-hover:text-brand-green-600 transition-colors">
+                  <h3 className="text-base sm:text-xl font-semibold gradient-text mb-2 sm:mb-3 metropolis-heading group-hover:text-brand-green-600 transition-colors">
                     {blog.title}
                   </h3>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4 font-light">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 font-light">
                     {blog.excerpt}
                   </p>
                   
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+                  <div className="flex items-center justify-between text-xs text-gray-500 mb-3 sm:mb-4">
                     <div className="flex items-center gap-1">
                       <User className="w-3 h-3" />
                       <span>{blog.author.name}</span>
@@ -283,7 +278,7 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-xs text-gray-500">
+                    <div className="flex items-center gap-2 sm:gap-4 text-xs text-gray-500">
                       <div className="flex items-center gap-1">
                         <Eye className="w-3 h-3" />
                         <span>{blog.views}</span>
@@ -316,10 +311,10 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
           )}
 
           {/* View More Button */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <button 
               onClick={onBlogsClick}
-              className="bg-white text-brand-green-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl border-2 border-brand-green-200 hover:border-brand-green-400"
+              className="bg-white text-brand-green-600 px-6 py-3 sm:px-8 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl border-2 border-brand-green-200 hover:border-brand-green-400 text-base sm:text-lg"
             >
               View All Blogs
             </button>

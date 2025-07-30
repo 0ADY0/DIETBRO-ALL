@@ -68,27 +68,22 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-brand rounded-full blur-3xl float"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-brand rounded-full blur-3xl float" style={{ animationDelay: '3s' }}></div>
-      </div>
+    <section className="py-10 sm:py-20 lg:py-28 bg-transparent relative overflow-hidden">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight metropolis-heading text-reveal">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight metropolis-heading text-reveal">
             Bangalore's #1 Meal Subscription choice
           </h2>
-          <p className="text-xl text-gray-600 font-light max-w-3xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl text-gray-600 font-light max-w-3xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
             Dietbro is setting new standards for taste and quality with fresh, chef-crafted meals.
           </p>
         </div>
 
         {/* Testimonials Slider */}
-        <div className="mb-16 text-reveal" style={{ animationDelay: '0.4s' }}>
-          <div className="bg-gradient-brand rounded-3xl p-8 lg:p-12 relative overflow-hidden shadow-4xl hover:shadow-glow-lg transition-all duration-500">
+        <div className="mb-10 sm:mb-16 text-reveal" style={{ animationDelay: '0.4s' }}>
+          <div className="bg-gradient-brand rounded-3xl p-4 sm:p-8 lg:p-12 relative overflow-hidden shadow-4xl hover:shadow-glow-lg transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-brand-green-500 to-brand-green-700 opacity-90"></div>
             
             {/* Floating Elements */}
@@ -96,7 +91,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
             <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/10 rounded-full float" style={{ animationDelay: '1s' }}></div>
             
             <div className="relative z-10">
-              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8 text-center metropolis-heading text-shadow-lg">
+              <h3 className="text-lg sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-8 text-center metropolis-heading text-shadow-lg">
                 Our Customer Testimonial about us
               </h3>
 
@@ -106,12 +101,12 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                   {testimonials.map((testimonial) => (
                     <div key={testimonial.id} className="w-full flex-shrink-0">
-                      <div className="flex flex-col lg:flex-row items-center gap-8 max-w-4xl mx-auto">
+                      <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row items-center max-w-4xl mx-auto px-2">
                         {/* Quote */}
                         <div className="flex-1 text-center lg:text-left">
-                          <div className="floating-card bg-white rounded-2xl p-6 lg:p-8 shadow-xl relative hover:shadow-glow transition-all duration-500">
+                          <div className="floating-card bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl relative hover:shadow-glow transition-all duration-500">
                             <div className="absolute -bottom-4 left-8 w-8 h-8 bg-white transform rotate-45"></div>
-                            <blockquote className="text-gray-800 text-lg lg:text-xl font-medium italic leading-relaxed">
+                            <blockquote className="text-gray-800 text-base sm:text-lg lg:text-xl font-medium italic leading-relaxed">
                               "{testimonial.quote}"
                             </blockquote>
                           </div>
@@ -119,17 +114,17 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
 
                         {/* Profile */}
                         <div className="flex-shrink-0 text-center">
-                          <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-white shadow-glow hover:scale-110 transition-transform duration-300 interactive">
+                          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 rounded-full overflow-hidden mx-auto mb-2 sm:mb-4 border-4 border-white shadow-glow hover:scale-105 sm:hover:scale-110 transition-transform duration-300 interactive">
                             <img 
                               src={testimonial.image} 
                               alt={testimonial.name}
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <h4 className="text-white font-bold text-lg lg:text-xl mb-1">
+                          <h4 className="text-white font-bold text-base sm:text-lg lg:text-xl mb-1">
                             {testimonial.name}
                           </h4>
-                          <p className="text-brand-green-100 font-medium">
+                          <p className="text-brand-green-100 font-medium text-xs sm:text-base">
                             {testimonial.role}
                           </p>
                         </div>
@@ -154,7 +149,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
               </div>
 
               {/* Dots Indicator */}
-              <div className="flex justify-center mt-8 gap-3">
+              <div className="flex justify-center mt-6 sm:mt-8 gap-2 sm:gap-3">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
@@ -172,30 +167,30 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div className="relative text-reveal" style={{ animationDelay: '0.6s' }}>
             <img 
               src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" 
               alt="Couple enjoying healthy meal"
-              className="w-full h-96 object-cover rounded-2xl shadow-4xl hover:shadow-glow transition-all duration-500 hover:scale-105 hover:rotate-1"
+              className="w-full h-48 sm:h-96 object-cover rounded-2xl shadow-4xl hover:shadow-glow transition-all duration-500 hover:scale-105 hover:rotate-1"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-2xl hover:from-brand-green-900/20 transition-all duration-500"></div>
           </div>
 
           <div className="space-y-8 text-reveal" style={{ animationDelay: '0.8s' }}>
-            <h3 className="text-4xl lg:text-5xl font-bold gradient-text leading-tight metropolis-heading">
+            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text leading-tight metropolis-heading">
               Eat healthy, live better.<br />
               Dietbro has you<br />
               covered.
             </h3>
             
-            <p className="text-xl text-gray-600 leading-relaxed font-light">
+            <p className="text-base sm:text-xl text-gray-600 leading-relaxed font-light">
               Join thousands of satisfied customers who have transformed their eating habits with our premium meal delivery service.
             </p>
 
             <button 
               onClick={onGetStarted}
-              className="btn-primary bg-gradient-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+              className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
             >
               Get Started
             </button>

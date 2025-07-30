@@ -50,6 +50,9 @@ export default {
         'bold': '700',
         'extrabold': '800',
         'black': '900',
+      },
+      animation: {
+        'spin-slow': 'rotate-slow 20s linear infinite',
       }
     },
   },

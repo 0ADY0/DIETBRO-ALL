@@ -31,59 +31,54 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-brand-green-200 rounded-full rotate-slow"></div>
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-brand-green-200 rounded-full rotate-slow" style={{ animationDirection: 'reverse' }}></div>
-      </div>
+    <section className="py-8 sm:py-16 lg:py-20 bg-transparent relative overflow-hidden">
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 sm:mb-16">
           {/* Apply font-gagalin for the main heading */}
-          <h2 className="text-4xl lg:text-5xl font-bold gradient-text mb-6 tracking-tight font-metropolis text-reveal">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight font-metropolis text-reveal">
             How Dietbro Works:
           </h2>
-          <p className="text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
             Save time and enjoy nutritious ready-to-eat meals in 3 easy steps.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {steps.map((step, index) => (
-            <div key={index} className="text-center group stagger-animation">
+            <div key={index} className="text-center group stagger-animation px-2">
               <div className="relative mb-6 hover-lift">
                 <img 
                   src={step.image} 
                   alt={step.title}
-                  className="w-full h-48 object-cover rounded-2xl shadow-lg group-hover:shadow-glow transition-all duration-500 hover:scale-105"
+                  className="w-full h-36 sm:h-48 object-cover rounded-2xl shadow-lg group-hover:shadow-glow transition-all duration-500 hover:scale-105"
                 />
                 {/* Apply font-oswald for the numbers */}
-                <div className="absolute -top-4 -left-4 bg-gradient-brand text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl font-oswald shadow-glow pulse-slow">
+                <div className="absolute -top-3 -left-3 bg-gradient-brand text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-2xl font-oswald shadow-glow pulse-slow">
                   {step.number}
                 </div>
               </div>
               
-              <div className="flex justify-center mb-4 bounce-subtle" style={{ animationDelay: `${index * 0.5}s` }}>
+              <div className="flex justify-center mb-2 sm:mb-4 bounce-subtle" style={{ animationDelay: `${index * 0.5}s` }}>
                 {step.icon}
               </div>
               
               {/* Apply font-oswald for the step titles */}
-              <h3 className="text-xl font-bold gradient-text mb-3 font-oswald text-shadow">
+              <h3 className="text-base sm:text-xl font-bold gradient-text mb-2 sm:mb-3 font-oswald text-shadow">
                 {step.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed font-light">
+              <p className="text-gray-600 leading-relaxed font-light text-sm sm:text-base">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-10 sm:mt-16">
           <button 
             onClick={onGetStarted}
-            className="btn-primary bg-gradient-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+            className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
           >
             Get Started
           </button>

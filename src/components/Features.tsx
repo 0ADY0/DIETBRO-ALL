@@ -25,12 +25,7 @@ const Features: React.FC<FeaturesProps> = ({ onGetStarted }) => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-brand-green-200 rounded-full float"></div>
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 border-2 border-brand-green-200 rounded-full float" style={{ animationDelay: '1.5s' }}></div>
-      </div>
+    <section className="py-20 lg:py-28 bg-transparent relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
