@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
             </h1>
             
             {/* Enhanced Subtitle */}
-            <p className="text-base sm:text-xl lg:text-2xl text-gray-700 leading-relaxed font-light text-reveal" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base sm:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium text-reveal" style={{ animationDelay: '0.2s' }}>
               Fuel your fitness journey with chef-crafted, nutritionally 
               optimized, eco-friendly meals across Bangalore.
             </p>

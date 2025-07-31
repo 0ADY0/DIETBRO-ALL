@@ -28,7 +28,7 @@ const Features: React.FC<FeaturesProps> = ({ onGetStarted }) => {
     <section className="py-12 lg:py-20 bg-transparent relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="relative text-reveal">
             <img 
               src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop" 
@@ -46,26 +46,28 @@ const Features: React.FC<FeaturesProps> = ({ onGetStarted }) => {
                 </div>
                 <div>
                   {/* Changed metropolis-subheading to font-oswald for consistency */}
-                  <h3 className="text-xl font-bold gradient-text mb-3 font-oswald text-shadow">
+                  <h3 className="text-xl font-bold text-brand-green-500 mb-3 font-oswald text-shadow">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed font-light">
+                  <p className="text-gray-600 leading-relaxed font-medium">
                     {feature.description}
                   </p>
                 </div>
               </div>
             ))}
 
-            <div className="pt-8">
-              <button 
-                onClick={onGetStarted}
-                className="btn-primary bg-gradient-brand text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
-              >
-                Get Offer
-              </button>
-              <p className="text-sm text-gray-500 mt-3 font-light">
-                Skip or cancel any time
-              </p>
+            <div className="text-center mt-10 sm:mt-16">
+              <div className="flex flex-col items-center">
+                <button 
+                  onClick={onGetStarted}
+                  className="btn-primary bg-brand-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+                >
+                  Get Offer
+                </button>
+                <p className="text-sm text-gray-500 mt-3 font-light">
+                  Skip or cancel any time
+                </p>
+              </div>
             </div>
           </div>
         </div>

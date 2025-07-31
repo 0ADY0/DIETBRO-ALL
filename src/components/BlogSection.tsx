@@ -207,16 +207,16 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onGetStarted, onBlogsClick })
         <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-10 sm:mb-16">
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight metropolis-heading text-reveal">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-green-500 mb-4 sm:mb-6 tracking-tight metropolis-heading text-reveal">
               Food Stories & Experiences
             </h2>
-            <p className="text-base sm:text-xl text-gray-600 font-light max-w-3xl mx-auto mb-6 sm:mb-8 text-reveal" style={{ animationDelay: '0.2s' }}>
+            <p className="text-base sm:text-xl text-gray-600 font-medium max-w-3xl mx-auto mb-6 sm:mb-8 text-reveal" style={{ animationDelay: '0.2s' }}>
               Share your culinary journey, discover amazing recipes, and connect with fellow food lovers in our community.
             </p>
             
             <button 
               onClick={() => setShowCreatePopup(true)}
-              className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive inline-flex items-center gap-2 sm:gap-3"
+              className="btn-primary bg-brand-green-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive inline-flex items-center gap-2 sm:gap-3"
             >
               <PenTool className="w-5 h-5" />
               Share Your Food Story

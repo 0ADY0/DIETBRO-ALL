@@ -123,19 +123,19 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onGetStarted }) => {
           </div>
 
           <div className="space-y-8 text-reveal" style={{ animationDelay: '0.8s' }}>
-            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text leading-tight metropolis-heading">
+            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-green-600 leading-tight metropolis-heading">
               Eat healthy, live better.<br />
               Dietbro has you<br />
               covered.
             </h3>
             
-            <p className="text-base sm:text-xl text-gray-600 leading-relaxed font-light">
+            <p className="text-base sm:text-xl text-gray-600 leading-relaxed font-medium">
               Join thousands of satisfied customers who have transformed their eating habits with our premium meal delivery service.
             </p>
 
             <button 
               onClick={onGetStarted}
-              className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+              className="btn-primary bg-brand-green-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
             >
               Get Started
             </button>

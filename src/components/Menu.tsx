@@ -39,10 +39,10 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
       <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
           {/* Apply font-gagalin for the main heading */}
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight font-metropolis text-reveal">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-green-500 mb-4 sm:mb-6 tracking-tight font-metropolis text-reveal">
             Explore Our Menu
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl text-gray-600 font-medium max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
             Browse the 40 gourmet prepared meals featured on this month's menu
           </p>
         </div>
@@ -64,10 +64,10 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
               
               <div className="p-4 sm:p-6">
                 {/* Apply font-oswald for the menu item names */}
-                <h3 className="text-base sm:text-xl font-bold gradient-text mb-2 font-heading text-shadow">
+                <h3 className="text-base sm:text-xl font-bold text-brand-green-500 mb-2 font-heading text-shadow">
                   {item.name}
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm font-light">
+                <p className="text-gray-600 text-xs sm:text-sm font-medium">
                   Chef-crafted with premium ingredients
                 </p>
               </div>
@@ -78,7 +78,7 @@ const Menu: React.FC<MenuProps> = ({ onGetStarted, onMenuClick, onPlansClick, on
         <div className="text-center mt-10 sm:mt-16">
           <button 
             onClick={onGetStarted}
-            className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+            className="btn-primary bg-brand-green-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
           >
             Explore menu
           </button>

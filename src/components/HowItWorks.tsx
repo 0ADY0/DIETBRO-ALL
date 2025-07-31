@@ -36,10 +36,10 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-16">
           {/* Apply font-gagalin for the main heading */}
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold gradient-text mb-4 sm:mb-6 tracking-tight font-metropolis text-reveal">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-brand-green-500 mb-4 sm:mb-6 tracking-tight font-metropolis text-reveal">
             How Dietbro Works:
           </h2>
-          <p className="text-base sm:text-xl text-gray-600 font-light max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-xl text-gray-600 font-medium max-w-2xl mx-auto text-reveal" style={{ animationDelay: '0.2s' }}>
             Save time and enjoy nutritious ready-to-eat meals in 3 easy steps.
           </p>
         </div>
@@ -54,7 +54,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
                   className="w-full h-36 sm:h-48 object-cover rounded-2xl shadow-lg group-hover:shadow-glow transition-all duration-500 hover:scale-105"
                 />
                 {/* Apply font-oswald for the numbers */}
-                <div className="absolute -top-3 -left-3 bg-gradient-brand text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-2xl font-oswald shadow-glow pulse-slow">
+                <div className="absolute -top-3 -left-3 bg-brand-green-500 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-lg sm:text-2xl font-oswald shadow-glow pulse-slow">
                   {step.number}
                 </div>
               </div>
@@ -64,11 +64,11 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
               </div>
               
               {/* Apply font-oswald for the step titles */}
-              <h3 className="text-base sm:text-xl font-bold gradient-text mb-2 sm:mb-3 font-oswald text-shadow">
+              <h3 className="text-base sm:text-xl font-bold text-brand-green-500 mb-2 sm:mb-3 font-oswald text-shadow">
                 {step.title}
               </h3>
               
-              <p className="text-gray-600 leading-relaxed font-light text-sm sm:text-base">
+              <p className="text-gray-600 leading-relaxed font-medium text-sm sm:text-base">
                 {step.description}
               </p>
             </div>
@@ -78,7 +78,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onGetStarted }) => {
         <div className="text-center mt-10 sm:mt-16">
           <button 
             onClick={onGetStarted}
-            className="btn-primary bg-gradient-brand text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
+            className="btn-primary bg-brand-green-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:bg-brand-green-600 transition-all text-base sm:text-lg shadow-glow hover:shadow-glow-lg transform hover:-translate-y-2 hover:scale-105 interactive"
           >
             Get Started
           </button>

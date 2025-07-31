@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({ onGetStarted, /*onOrdersClick,*/ onMenu
             >
               DIETBRO
             </h3>
-            <p className="text-gray-300 leading-relaxed font-light">
+            <p className="text-gray-300 leading-relaxed font-medium">
               Delivering fresh, nutritious, and delicious meals to fuel your fitness journey across Bangalore.
             </p>
             <div className="flex space-x-4">

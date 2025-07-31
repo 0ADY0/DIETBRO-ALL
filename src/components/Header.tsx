@@ -125,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStarted, /*onOrdersClick,*/ onMenu
               </button>
               <button
                 onClick={onGetStarted}
-                className="btn-primary bg-gradient-brand text-white px-6 py-2.5 rounded-xl hover:bg-brand-green-600 transition-all font-semibold w-fit text-sm shadow-glow hover:shadow-glow-lg transform hover:-translate-y-1 hover:scale-105 interactive"
+                className="btn-primary bg-brand-green-500 text-white px-6 py-2.5 rounded-xl hover:bg-brand-green-600 transition-all font-semibold w-fit text-sm shadow-glow hover:shadow-glow-lg transform hover:-translate-y-1 hover:scale-105 interactive"
               >
                 Get Started
               </button>
